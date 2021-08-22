@@ -1,0 +1,558 @@
+// main styles start
+
+.main {
+    margin-top: 118px;
+    @include adaptive-value-fromMax-toMin(margin-bottom, 100, 25);
+    @media screen and (max-width: 768px) {
+        margin-top: 0;
+    }
+    &__container {
+        
+        padding-top: 25px;
+        display: grid;
+        grid-template-columns: 75% 23%;
+        column-gap: 2%;
+        @media screen and (max-width: 768px) {
+            padding-top: 0;
+        }
+        @media screen and (max-width: 550px) {
+            display: block;
+        }
+    }
+    &__left-side {
+    }
+    &__section {
+        &_actual {
+        }
+        &_game {
+        }
+        &_other {
+        }
+    }
+    &__right-side {
+    }
+}
+.main-wrapper {
+}
+
+.main-section {
+    &__header {
+        padding-top: 14px;
+        padding-bottom: 14px;
+        padding-left: 22px;
+        background-color: $redcolor;
+        margin-bottom: 12px;
+    }
+    &__title {
+        color: $textwhite;
+        @extend %titlesections;
+    }
+    &__post {
+        max-width: 998px;
+        border-top: 2px solid $redcolor;
+        margin-bottom: 25px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        position: relative;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 12px;
+        }
+    }
+    &__mini-post-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 17px;
+
+        @media screen and (max-width: 768px) {
+            column-gap: 12px;
+        }
+        @media screen and (max-width: 550px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+    &__mini-post {
+        max-width: 322px;
+        border-top: 2px solid $redcolor;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        margin-bottom: 25px;
+
+        @media screen and (max-width: 768px) {
+            margin-bottom: 12px;
+        }  
+        transition: all .5s;
+    }
+    &__bottom {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-bottom: 25px;
+        .lines {
+            height: 2px;
+            background-color: #C6C6C6;
+            flex-grow: 1;
+        }
+        transition: .5s;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 12px;
+        }
+    }
+    &__button {
+        max-width: 230px;
+        margin-left: 17px;
+        margin-right: 17px;
+        background: none;
+    }
+}
+.main-post {
+    &__link {
+        display: block;
+        display: flex;
+        flex-wrap: nowrap;
+        &:hover {
+            .main-post__title {
+                color: $redcolor;
+            }
+            .main-post__pic::before {
+               background-color: $redcolor;
+            }
+            .main-post__img {
+                transform: scale(1.05);
+            }
+            .main-post__video {
+                background-color: rgba(250, 250, 250, .9);
+            }
+            .main-post__photo {
+                background-color: rgba(250, 250, 250, .9);
+            }
+        }
+        @media screen and (max-width: 550px) {
+            display: block;
+        }
+    }
+    &__pic {
+        flex: 1 1 66%;
+        overflow: hidden;
+        position: relative;
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            background-color: transparent;
+            opacity: 30%;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+            z-index: 1;
+        }
+    }
+    &__video {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include adaptive-value-fromMax-toMin(width, 100, 50);
+        @include adaptive-value-fromMax-toMin(height, 100, 50);
+        background: url(../img/svg/arrow-video.svg) no-repeat center;
+        background-size: 50%;
+        background-color: rgba(250, 250, 250, .5);
+        transition: .5s;
+        z-index: 1;
+    }
+    &__photo {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include adaptive-value-fromMax-toMin(width, 100, 50);
+        @include adaptive-value-fromMax-toMin(height, 100, 50);
+        background: url(../img/svg/photo.svg) no-repeat center;
+        background-size: 50%;
+        background-color: rgba(250, 250, 250, .5);
+        transition: .5s;
+        z-index: 1;
+    }
+    &__img {
+        transition: .5s;
+        transform: scale(1);
+    }
+    &__title-block {
+        flex: 1 1 34%;
+        background-color: $textwhite;
+        @include adaptive-value-fromMax-to550(padding-left, 25, 10);
+        @include adaptive-value-fromMax-to550(padding-right, 25, 10);
+        @include adaptive-value-fromMax-to550(padding-top, 30, 10);
+        @media screen and (max-width: 550px) {
+            padding: 15px;
+        }
+    }
+    &__subtitle {
+        @include adaptive-value-fromMax-to550(margin-bottom, 20, 5);
+        color: $textsubtitle;
+        @extend %subtitleminiblock;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 15px;
+            font-size: 10px;
+            line-height: 100%;
+        }
+    }
+    &__title {       
+        @include adaptive-value-fromMax-to550(margin-bottom, 30, 10);
+        @extend %titleblock;
+        color: $textblack;
+        transition: .5s;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 15px;
+            font-size: 22px;
+            line-height: 100%;
+        }
+        
+    }
+    &__annotation {
+        @extend %subtitleblock;
+        color: $textblack;
+        @media screen and (max-width: 550px) {
+            font-size: 12px;
+            line-height: 100%;
+        }
+    }
+}
+.main-mini-post {
+    &__link {
+        height: 100%;
+        display: block;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        &:hover {
+            .main-mini-post__title {
+                color: $redcolor;
+            }
+            .main-mini-post__pic::before {
+               background-color: $redcolor; 
+            }
+            .main-mini-post__img {
+                transform: scale(1.05);
+            }
+            .main-mini-post__video {
+                background-color: rgba(250, 250, 250, .9);
+            }
+            .main-mini-post__photo {
+                background-color: rgba(250, 250, 250, .9);
+            }
+        }
+    }
+    &__pic {
+        position: relative;
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            background-color: transparent;
+            opacity: 30%;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+            z-index: 1;
+        }
+    }
+    &__video {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 31%;
+        height: 45%;
+        background: url(../img/svg/arrow-video.svg) no-repeat center;
+        background-size: 50%;
+        background-color: rgba(250, 250, 250, .5);
+        transition: .5s;
+        z-index: 1;
+    }
+    &__photo {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 31%;
+        height: 45%;
+        background: url(../img/svg/photo.svg) no-repeat center;
+        background-size: 50%;
+        background-color: rgba(250, 250, 250, .5);
+        transition: .5s;
+        z-index: 1;
+    }
+    &__overflow {
+        overflow: hidden;
+    }
+    &__img {
+        transition: .5s;
+        transform: scale(1);
+    }
+    &__title-block {
+        background-color: $textwhite;
+        @include adaptive-value-fromMax-to550(padding-left, 25, 10);
+        @include adaptive-value-fromMax-to550(padding-right, 25, 10);
+        @include adaptive-value-fromMax-to550(padding-top, 30, 5);
+        @include adaptive-value-fromMax-to550(padding-bottom, 11, 5);
+        // height: 100%;
+        flex-basis: 100%;
+        @media screen and (max-width: 550px) {
+            padding: 15px;
+        }
+    }
+    &__subtitle {
+        @include adaptive-value-fromMax-to550(margin-bottom, 20, 5);
+        color: $textsubtitle;
+        @extend %subtitleminiblock;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 15px;
+            font-size: 10px;
+            line-height: 100%;
+        }
+    }
+    &__title {
+        @include adaptive-value-fromMax-to550(margin-bottom, 30, 5);
+        @extend %titleblock;
+        @include adaptive-value-fromMax-to550(font-size, 25, 12);
+        color: $textblack;
+        transition: .5s;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 15px;
+            font-size: 17px;
+            line-height: 100%;
+        }
+    }
+}
+.main-button {
+    &__container {
+        @include adaptive-value-fromMax-to550(padding, 10, 5);
+        background-color: $redcolor;
+        text-align: center;
+        transition: .5s;
+        &:hover, &:active {
+            background-color: rgba(187, 0, 0, 1.0);
+        }
+        color: $textwhite;
+        font-family: 'Circe';
+        font-style: normal;
+        font-weight: normal;
+        @include adaptive-value-fromMax-to550(font-size, 12, 9);
+        line-height: 18px;
+        text-transform: uppercase;
+        @media screen and (max-width: 550px) {
+            padding: 10px;
+        }
+    }
+}
+.right-side {
+    &__match {
+        @include adaptive-value-fromMax-to550(padding, 20, 10);
+        @include adaptive-value-fromMax-to550(margin-bottom, 25, 15);
+        background-color: $footercolor;
+        border-top: 2px solid $redcolor;
+        @media screen and (max-width: 550px) {
+            padding: 20px;
+            margin-bottom: 12px;
+        }
+    }
+    &__media {
+    }
+}
+.match-poster {
+    &__link {
+        &:hover {
+            figcaption {
+                color: $redcolor;
+            }
+        }
+    }
+    &__top {
+        @include adaptive-value-fromMax-to550(padding-bottom, 20, 10);
+        border-bottom: 1px solid #C6C6C6;
+        @media screen and (max-width: 550px) {
+            padding-bottom: 20px;
+        }
+    }
+    &__text {
+        @extend %subtitleblockbold;
+        color: $textwhite;
+    }
+    &__body {
+        @include adaptive-value-fromMax-to550(padding-top, 51, 35);
+        @include adaptive-value-fromMax-to550(padding-bottom, 41, 35);
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        @media screen and (max-width: 900px) {
+            flex-direction: column;
+            @include adaptive-value-fromMax-to550(padding-top, 30, 20);
+            @include adaptive-value-fromMax-to550(padding-bottom, 30, 20);
+        }
+        @media screen and (max-width: 550px) {
+            flex-direction: row;
+            padding-top: 30px;
+            padding-bottom: 30px;
+        }
+    }
+    &__bottom {
+        @include adaptive-value-fromMax-to550(padding-top, 20, 10);
+        border-top: 1px solid #C6C6C6;
+        @media screen and (max-width: 550px) {
+            padding-top: 20px;
+        }
+    }
+}
+.poster-body {
+    &__block {
+        @include adaptive-value-fromMax-to550(width, 86, 65);
+        @media screen and (max-width: 900px) {
+            @include adaptive-value-fromMax-to550(width, 86, 65);
+        }
+        @media screen and (max-width: 550px) {
+            width: 86px;
+        }
+        &_versus {
+            // position: relative;
+            
+            @include adaptive-value-fromMax-to550(width, 20, 7);
+            // padding-top: 100%;
+            @media screen and (max-width: 900px) {
+                margin-top: 20px;
+                margin-bottom: 20px;
+            }
+            @media screen and (max-width: 550px) {
+                width: 20px;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+    &__pic {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        figcaption {
+            @extend %subtitleblockbold;
+            color: $textwhite;
+            text-transform: uppercase;
+            transition: .5s;
+        }
+        img {
+            @include adaptive-value-fromMax-to550(margin-bottom, 20, 10);
+            @media screen and (max-width: 550px) {
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+
+// Media styles start
+
+.media {
+    &__title {
+        @extend %titlesections;
+        
+        color: $blackcolor;
+        margin-bottom: 30px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            @include adaptive-value-fromMax-to550(bottom, -6, -10);
+            left: 0;
+            width: 24px;
+            height: 4px;
+            background-color: #C4C4C4;
+        }
+    }
+    &__container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        @include adaptive-value-fromMax-to550(column-gap, 15, 5);
+        @include adaptive-value-fromMax-to550(row-gap, 15, 5);
+        @media screen and (max-width: 550px) {
+            grid-template-columns: repeat(5, 1fr);
+            column-gap: 5px;
+            row-gap: 5px;
+        }
+    }
+    &__item {
+        
+        background-color: $textwhite;
+        width: 100%;
+        padding-top: 100%;
+        position: relative;
+        &_vk {
+        }
+        &_instagram {
+        }
+        &_whatsapp {
+        }
+        &_youtube {
+        }
+        &_telegram {
+        }
+    }
+    &__link {
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: -50%;
+        transform: translateY(50%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        svg {
+            width: 47%;
+            height: auto;
+        }
+        path, rect, circle {
+            transition: .2s;
+        }
+        .media__item_vk &:hover {
+            path {
+                fill: $redcolor;
+            }
+        }
+        .media__item_youtube &:hover {
+            path {
+                fill: $redcolor;
+            }
+        }
+        .media__item_instagram &:hover {
+            rect, circle {
+                stroke: $redcolor;
+            }
+            .circle {
+                fill: $redcolor;
+            }
+        }
+        .media__item_whatsapp &:hover {
+            path {
+                stroke: $redcolor;
+            }
+            .path {
+                fill: $redcolor;
+            }
+        }
+        .media__item_telegram &:hover {
+            .path1 {
+                stroke: $redcolor;
+            }
+            .path2 {
+                fill: $redcolor;
+            }
+        }
+    }
+}
+
+.display-none {
+    height: 0px;
+    border: 0;
+    margin-bottom: 0;
+    pointer-events: none;
+    overflow: hidden;
+    .main-mini-post__link {
+        height: unset;
+    }
+}
+// main styles end

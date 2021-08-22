@@ -1,0 +1,64 @@
+@import "_mixins.scss";
+// Colors
+$redcolor: #F00000;
+$bgcolor: #F1F2F3;
+$footercolor: #172030;
+$blackcolor: #151D2E;
+$textwhite: #FFFFFF;
+$textblack: #454D59;
+$textsubtitle: #72767E;
+
+// Text
+%textheader {
+    font-family: 'Circe';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 17px;
+    line-height: 25px;
+    text-transform: uppercase;
+}
+%titlesections {
+    font-family: 'Agency FB Cyrillic';
+    font-style: normal;
+    font-weight: normal;
+    @include adaptive-value-fromMax-toMin(font-size, 28, 22);
+    @include adaptive-value-fromMax-toMin(line-height, 31, 22);
+    text-transform: uppercase;
+}
+%titleblock {
+    font-family: 'Circe';
+    font-style: normal;
+    font-weight: bold;
+    @include adaptive-value-fromMax-to550(font-size, 30, 17);
+    font-size: 30px;
+    line-height: 100%;
+}
+%subtitleblock {
+    font-family: 'Circe';
+    font-style: normal;
+    font-weight: normal;
+    @include adaptive-value-fromMax-to550(font-size, 14, 10);
+    @include adaptive-value-fromMax-to550(line-height, 17, 11);
+}
+%subtitleblockbold {
+    font-family: 'Circe';
+    font-style: normal;
+    font-weight: bold;
+    @include adaptive-value-fromMax-to550(font-size, 14, 10);
+    @include adaptive-value-fromMax-to550(line-height, 21, 10);
+}
+%subtitleminiblock {
+    font-family: 'Circe';
+    font-style: normal;
+    font-weight: bold;
+    @include adaptive-value-fromMax-to550(font-size, 11, 6);
+    @include adaptive-value-fromMax-to550(line-height, 16, 10);
+    text-transform: uppercase;
+}
+%paragraph {
+    font-family: 'Circe';
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 27px;
+}

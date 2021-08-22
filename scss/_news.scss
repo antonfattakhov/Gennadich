@@ -1,0 +1,204 @@
+// News styles start
+
+
+.main-top {
+    background: url(../img/background.jpg) no-repeat right;
+    background-color: $footercolor;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 12px;
+    }
+    &__wrapper {
+        @include adaptive-value-fromMax-toMin(padding-top, 44, 25);
+    }
+    &__title {
+        @extend %titlesections;
+        @include adaptive-value-fromMax-toMin(font-size, 52, 30);
+        @include adaptive-value-fromMax-toMin(margin-bottom, 31, 25);
+        color: $textwhite;
+    }
+    &__nav {
+        border-top: 1px solid #C6C6C6;
+        @include adaptive-value-fromMax-to768(padding-left, 47, 27);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        @media screen and (max-width: 425px) {
+            padding-left: 0;
+        }
+    }
+}
+.top-nav {
+    &__body {
+        display: flex;
+        flex-wrap: nowrap;
+        @media screen and (max-width: 425px) {
+            justify-content: space-around;
+        }
+    }
+    &__item {
+    }
+    &__button {
+        background: none;
+        color: $textwhite;
+        @extend %textheader;
+        @include adaptive-value-fromMax-toMin(font-size, 17, 13);
+        margin-right: 36px;
+        position: relative;
+        @media screen and (max-width: 425px) {
+            margin-right: 0;
+        }
+        &::after {
+            content: "";
+            width: 100%;
+            height: 4px;
+            background-color: $textwhite;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform-origin: left;
+            transform: scale(0, 1) translateX(-50%);
+            transition: .2s;
+        }
+        &:hover::after {
+            transform: scale(1, 1) translateX(-50%);
+        }
+        &-active {
+            &::after {
+                transform: scale(1, 1) translateX(-50%);
+            }
+        }
+    }
+}
+.news {
+    &__wrapper {
+    }
+    &__post {
+    }
+}
+.news-post {
+    margin-bottom: 12px;
+    &:last-child {
+        margin-bottom: 0;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 12px;
+        }
+    }
+    &__link {
+        display: block;
+        display: flex;
+        flex-wrap: nowrap;
+        &:hover {
+            .news-post__title {
+                color: $redcolor;
+            }
+            .news-post__pic::before {
+               background-color: $redcolor;
+            }
+            .news-post__img {
+                transform: scale(1.05);
+            }
+        }
+    }
+    &__pic {
+        flex-basis: 18.9%;
+        overflow: hidden;
+        position: relative;
+        @media screen and (max-width: 550px) {
+            flex-basis: 40%;
+        }
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            background-color: transparent;
+            opacity: 30%;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+            z-index: 1;
+        }
+    }
+    &__img {
+        height: 100%;
+        transition: .5s;
+        object-fit: cover;
+        transform: scale(1);
+    }
+    &__title-block {
+        flex-basis: 81.1%;
+        background-color: $textwhite;
+        @include adaptive-value-fromMax-to550(padding-left, 25, 10);
+        @include adaptive-value-fromMax-to550(padding-right, 25, 10);
+        @include adaptive-value-fromMax-to550(padding-top, 30, 10);
+        @media screen and (max-width: 550px) {
+            padding: 15px;
+            flex-basis: 60%;
+        }
+    }
+    &__subtitle {
+        @include adaptive-value-fromMax-to550(margin-bottom, 20, 5);
+        color: $textsubtitle;
+        @extend %subtitleminiblock;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 15px;
+            font-size: 10px;
+            line-height: 100%;
+        }
+    }
+    &__title {
+        @include adaptive-value-fromMax-to550(margin-bottom, 30, 10);
+        @extend %titleblock;
+        color: $textblack;
+        transition: .5s;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 15px;
+            font-size: 22px;
+            line-height: 100%;
+        }
+    }
+}
+@media screen and (max-width: 550px) {
+    .news-post:nth-child(1) {
+        img {
+            object-position: 10%;
+        }
+    }
+}
+
+// Swiper additional styles start
+
+.ekb-wrapper {
+    margin-bottom: 25px;
+    @media screen and (max-width: 550px) {
+        margin-top: 12px;
+        margin-bottom: 12px;
+    }
+}
+.swiper-item {
+    position: relative;
+    &::before {
+        content: 'VISIT EKATERINBURG';
+        font-family: 'Circe';
+        font-style: normal;
+        font-weight: bold;
+        @include adaptive-value-fromMax-to550(font-size, 33, 13);
+        @media screen and (max-width: 550px) {
+            font-size: 33px;
+            @include adaptive-value-from550-to320(font-size, 33, 23);
+        }
+        line-height: 100%;
+        text-align: center;
+        color: #FFFFFF;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    @media screen and (max-width: 550px) {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+// Swiper additional styles end
+
+// News styles end
