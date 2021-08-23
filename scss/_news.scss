@@ -9,6 +9,12 @@
     }
     &__wrapper {
         @include adaptive-value-fromMax-toMin(padding-top, 44, 25);
+        &_empty {
+            @include adaptive-value-fromMax-toMin(padding-bottom, 44, 25);
+            .main-top__title {
+                margin-bottom: 0;
+            }
+        }
     }
     &__title {
         @extend %titlesections;
@@ -173,7 +179,7 @@
         margin-bottom: 12px;
     }
 }
-.swiper-item {
+.swiper-item_ekb {
     position: relative;
     &::before {
         content: 'VISIT EKATERINBURG';

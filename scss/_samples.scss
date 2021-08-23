@@ -22,14 +22,14 @@ $textsubtitle: #72767E;
     font-style: normal;
     font-weight: normal;
     @include adaptive-value-fromMax-toMin(font-size, 28, 22);
-    @include adaptive-value-fromMax-toMin(line-height, 31, 22);
+    line-height: 100%;
     text-transform: uppercase;
 }
 %titleblock {
     font-family: 'Circe';
     font-style: normal;
     font-weight: bold;
-    @include adaptive-value-fromMax-to550(font-size, 30, 17);
+    @include adaptive-value-fromMax-toMin(font-size, 30, 17);
     font-size: 30px;
     line-height: 100%;
 }
@@ -59,6 +59,6 @@ $textsubtitle: #72767E;
     font-family: 'Circe';
     font-style: normal;
     font-weight: normal;
-    font-size: 18px;
-    line-height: 27px;
+    @include adaptive-value-fromMax-toMin(font-size, 18, 13);
+    @include adaptive-value-fromMax-toMin(line-height, 27, 15);
 }

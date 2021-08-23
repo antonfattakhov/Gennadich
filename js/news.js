@@ -67,9 +67,9 @@ new Swiper('.swiper-container', {
     loop: true,
     spaceBetween: 30,
     autoplay: {
-        delay: 2000,
+        delay: 3000,
         disableOnInteraction: false
     },
-    speed: 500,
+    speed: 1000,
 
 });

@@ -1,0 +1,91 @@
+.team-squad {
+    &__title {
+        @extend %titlesections;
+        color: $blackcolor;
+        margin-bottom: 25px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            @include adaptive-value-fromMax-to550(bottom, -6, -10);
+            left: 0;
+            width: 24px;
+            height: 4px;
+            background-color: #C4C4C4;
+        }
+        @media screen and (max-width: 550px) {
+            margin-top: 13px;
+        }
+    }
+    &__players {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 18px;
+        @media screen and (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 12px;
+        }
+    }
+    &__player {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 25px;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 12px;
+        }
+    }
+}
+.player-card {
+    &__title-block {
+        background-color: $textwhite;
+        @include adaptive-value-fromMax-to550(padding-left, 25, 12);
+        @include adaptive-value-fromMax-to550(padding-right, 25, 12);
+        @include adaptive-value-fromMax-to550(padding-top, 30, 12);
+        @include adaptive-value-fromMax-to550(padding-bottom, 30, 12);
+        position: relative;
+        @media screen and (max-width: 550px) {
+            padding-top: 15px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            padding-left: 15px;
+        }
+    }
+    &__subtitle {
+        @include adaptive-value-fromMax-to550(margin-bottom, 10, 5);
+        color: $textsubtitle;
+        @extend %subtitleminiblock;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 7px;
+            font-size: 6px;
+        }
+    }
+    &__title {
+        @extend %titleblock;
+        color: $textblack;
+        @media screen and (max-width: 550px) {
+            line-height: 100%;
+        }
+    }
+    &__number {
+        position: absolute;
+        top: 50%;
+        right: 5%;
+        transform: translateY(-50%);
+        font-family: 'Agency FB Cyrillic';
+        font-style: normal;
+        font-weight: normal;
+        @include adaptive-value-fromMax-to550(font-size, 66, 36);
+        line-height: 76px;
+        text-transform: uppercase;
+        color: #F00000;
+        @media screen and (max-width: 550px) {
+            font-size: 30px;
+        }
+    }
+}
+.right-side_padding-top {
+    @include adaptive-value-fromMax-to550(padding-top, 53, 48.2);
+    @media screen and (max-width: 550px) {
+        padding-top: 0;
+    }
+}

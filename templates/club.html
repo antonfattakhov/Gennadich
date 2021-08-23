@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости</title>
-    <link rel="stylesheet" href="../css/style.min.css">
+    <title>Клуб</title>
+    
     <link rel="stylesheet" href="../css/swiper.style.min.css">
+    <link rel="stylesheet" href="../css/style.min.css">
 </head>
 <body>
     <header class="header">
@@ -141,159 +142,183 @@
     </div>
 
     <main class="main">
-        <div class="main-top">
+        <div class="main-top main-top_video">
             <div class="main-top__wrapper _wrapper">
-                <h2 class="main-top__title">Новости</h2>
+                <h2 class="main-top__title">Клуб</h2>
                 <nav class="main-top__nav top-nav">
                     <ul class="top-nav__body">
                         <li class="top-nav__item">
-                            <button class="top-nav__button button-all-js">Все</button>
+                            <button class="top-nav__button button-way-js top-nav__button-active">Путь</button>
                         </li>
                         <li class="top-nav__item">
-                            <button class="top-nav__button button-interview-js">Интервью</button>
-                        </li>
-                        <li class="top-nav__item">
-                            <button class="top-nav__button button-opinion-js">Мнения</button>
+                            <button class="top-nav__button button-photos-js">Фото</button>
                         </li>
                     </ul>
                 </nav>
             </div>
         </div>
         <div class="main-wrapper _wrapper">
-            <div class="main__container">
+            <div class="main__container main__container_grid-none">
                 <div class="main__left-side">
-                    <section class="news">
-                        <div class="news__wrapper">
-                            <div class="news__post news-post topic-news">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-1.jpg" alt="Думы" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Новости</h4>
-                                        <h3 class="news-post__title">Думы на финишной прямой</h3>
-                                    </div>
-                                </a>
+                    <section class="way">
+                        <div class="way__wrapper">
+                            <div class="way__photo-box photo-box">
+                                <div class="photo-box__title-block">
+                                    <h4 class="photo-box__subtitle">Статья</h4>
+                                    <h3 class="photo-box__title">Колонка становления красного клуба</h3>
+                                </div>
+                                <div class="photo-box__pic">
+                                    <img src="../img/way-pic.jpg" alt="">
+                                </div>
                             </div>
-                            <div class="news__post news-post topic-interview">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-2.jpg" alt="Александр Петров" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Интервью</h4>
-                                        <h3 class="news-post__title">История Александра Петрова</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-news">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-4.jpg" alt="Игра" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Галлерея</h4>
-                                        <h3 class="news-post__title">Игра в условиях туманного Альбиона</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-opinion">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-6.jpg" alt="Руслан Алимгулов" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Мнение</h4>
-                                        <h3 class="news-post__title">Мысли об игре бомбардира команды</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-news">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-7.jpg" alt="Илья Минников" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Новости</h4>
-                                        <h3 class="news-post__title">Свежие выводы</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-interview">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-8.jpg" alt="Григорий Лейба" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Интервью</h4>
-                                        <h3 class="news-post__title">Какова она, вратарская жизнь?</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-news">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-9.jpg" alt="Новая форма" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Галлерея</h4>
-                                        <h3 class="news-post__title">Раскрыт комплект домашней формы 21/22</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-interview">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-12.jpg" alt="Иван Щербина" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Интервью</h4>
-                                        <h3 class="news-post__title">Становление капитана команды</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-opinion">
-                                <a href="" class="news-post__link" target="_blank">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-10.jpg" alt="Василий Мамонтов" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Мнение</h4>
-                                        <h3 class="news-post__title">Рассуждение о предстоящем матче</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </section>
-                    
-                </div>
-                <aside class="main__right-side right-side">
-                    <div data-da=".news__wrapper,550,3" class="ekb-wrapper">
-                        <a href="#!" class="ekb-link">
-                            <div class="swiper-container">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="swiper-item swiper-item_ekb">
-                                            <img src="../img/ekb-1.jpg" alt="Екатеринбург" class="swiper-img">
+                            <article class="way__article article-way">
+                                <h3 class="article-way__title">Путь</h3>
+                                <p class="article-way__text">Давным давно в далекой-далекой галактике на военных учебных сборах  нынешняя 10-ка Gennadich Антон узнал, что нынешняя 8-ка Ярослав увлекается футболом и собирает команду взвода энергетиков для участия в предстоящих днях спортивного праздника. Это событие было неслучайно.</p>
+                                <p class="article-way__text">Уже после возвращения со сборов и череды не особо приятных событий в жизни Антон решил отвлечься от негатива и сублимировать через футбольное творчество.  Так он попал в круг знакомых-футболистов Ярослава, которые играли по субботам на поле в районе новой оранжевой общаги!</p>
+                                <p class="article-way__text">Шли недели, и количество единомышленников сего мероприятия росло. Дошло даже до того, что впоследствии добавлять нового игрока оказывалось довольно трудно.</p>
+                                <p class="article-way__text">В один прекрасный летний день №22 Иван Щербина предложил поучаствовать в товарищеском турнире сильнейшим на тот момент составом. Конечно, инициатива была поддержана, но встал закономерный вопрос “Как назовем команду?”.</p>
+                                <p class="article-way__text">После всеобщего мозгового штурма появилась идея дать имя в честь человека, у которого на протяжении последних лет арендовалась домашняя арена. Звали его Андрей Геннадьевич. Или просто Геннадич (многие игроки не знали его имени - считаем это НИУВОЖЕНИЕМ). </p>
+                                <p class="article-way__text">На том турнире мы не одержали ни одной победы. Лучшшая игра была в дождь против команды “Мешки”, закончившаяся со счетом 2-2. Забавно, что все голы на турнире забил только один человек, с кого и началась данная статья. Он получил приз лучшего игрока команды!</p>
+                                <p class="article-way__text">Стоит отметить, что родной город для команды - Екатеринбург, а это означает суровые погодные условия в зимний период. Тренировки не прекращаются, а переходят в зал. Более того, зимой проводится Рождественский турнир, на котором Геннадич, разумеется, принимает участие. Место действия турнира - манеж профессионального клуба “Урал”,  неоднократно принимающий матчи РПЛ. </p>
+                                <p class="article-way__text">Рождественский турнир сложился двояко. С одной стороны, Геннадич занял 1ое место в группе, но с другой - проиграли оба матча плей-оф.  Рассчитывали на большее. Автору данной статьи многие игры понравились, подход к игре был уровнем выше. Но и в этот раз игрок Геннадича забрал приз “Лучший ассистент турнира”, им стал вновь №10.</p>
+                                <p class="article-way__text">Спустя пару месяцев на эмоциональном подъеме и желании развития игроки пришли к выводу, что следует пригласить опытного специалиста, который бы смог полноценно организовать тактическую игру, наладить локальные комбинации на поле, приучить думать по-футбольному. Идея была реализована.</p>
+                                <p class="article-way__text">Новый вид тренировок с тренером увлекал и приносил пользу. Без конфликтов и разногласий среди членов команды не обошлось. Тем не менее компромисс был достигнут.  Развитие пошло дальше и привело на более серьезный турнир “Екабайт”.</p>
+                                <p class="article-way__text">К сожалению, на текущей отсечке исторической ленты времени Геннадича происходит стагнация: многие игроки приобрели спортивное выгорание, что послужило к разрыву контракта с тренером, и тренировочной паузе. Только самые стойкие продолжают бороться, играют заключительные матчи и одерживают победы!</p>
+                                <p class="article-way__text">Надеемся вместе, что со временем вектор развития команды приобретет положительную динамику и моральный дух вернется.</p>
+                                <p class="article-way__text">Дело только за вами, Геннадичи...</p>
+                            </article>
+                            <a href="#!" class="ekb-link ekb-link-way">
+                                <div class="swiper-container swiper-ekb">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="swiper-item swiper-item_ekb">
+                                                <img src="../img/ekb-21.jpg" alt="Екатеринбург" class="swiper-img">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="swiper-item swiper-item_ekb">
-                                            <img src="../img/ekb-2.jpg" alt="Екатеринбург" class="swiper-img">
+                                        <div class="swiper-slide">
+                                            <div class="swiper-item swiper-item_ekb">
+                                                <img src="../img/ekb-22.jpg" alt="Екатеринбург" class="swiper-img">
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="swiper-slide">
-                                        <div class="swiper-item swiper-item_ekb">
-                                            <img src="../img/ekb-3.jpg" alt="Екатеринбург" class="swiper-img">
+                                        <div class="swiper-slide">
+                                            <div class="swiper-item swiper-item_ekb">
+                                                <img src="../img/ekb-23.jpg" alt="Екатеринбург" class="swiper-img">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                            </a>
+                        </div>
+                    </section>
+                    <section class="club">
+                        <div class="club__wrapper">
+                            <div class="club__item item-club club__item_1">
+                                <h4 class="item-club__title">Екабайт</h4>
+                                <img src="../img/gallery-small-1.jpg" alt="Команда" class="item-club__photo">
                             </div>
-                        </a>
-                    </div> 
-                    <div class="right-side__media media">
-                        <h3 class="media__title">Медиа</h3>
-                        <div class="media__container">
+                            <div class="club__item item-club club__item_2">
+                                <h4 class="item-club__title">Рождественский турнир</h4>
+                                <img src="../img/gallery-small-2.jpg" alt="Команда" class="item-club__photo">
+                            </div>
+                            <div class="club__item item-club club__item_3">
+                                <h4 class="item-club__title">Угол</h4>
+                                <img src="../img/gallery-small-3.jpg" alt="Александр Петров" class="item-club__photo">
+                            </div>
+                            <div class="club__item item-club club__item_4">
+                                <h4 class="item-club__title">Разбор</h4>
+                                <img src="../img/gallery-small-4.jpg" alt="Команда с тренером" class="item-club__photo">
+                            </div>
+                            <div class="club__item item-club club__item_5">
+                                <h4 class="item-club__title">Полет</h4>
+                                <img src="../img/gallery-small-5.jpg" alt="Антон Фаттахов" class="item-club__photo">
+                            </div>
+                            <div class="club__item item-club club__item_6">
+                                <h4 class="item-club__title">NFL Cup</h4>
+                                <img src="../img/gallery-small-6.jpg" alt="Команда" class="item-club__photo">
+                            </div>
+                            <div class="club__item item-club club__item_7">
+                                <h4 class="item-club__title">Чемпики</h4>
+                                <img src="../img/gallery-small-7.jpg" alt="Команда" class="item-club__photo">
+                            </div>
+                            <div class="club__item item-club club__item_8">
+                                <h4 class="item-club__title">Кри Ро</h4>
+                                <img src="../img/gallery-small-8.jpg" alt="Ян Киеня" class="item-club__photo">
+                            </div>
+                            <div class="club__item item-club club__item_9">
+                                <h4 class="item-club__title">Первая тренировка</h4>
+                                <img src="../img/gallery-small-9.jpg" alt="На тренировке" class="item-club__photo">
+                            </div>
+                            <div class="club__item item-club club__item_10">
+                                <h4 class="item-club__title">Банда</h4>
+                                <img src="../img/gallery-small-10.jpg" alt="Команда" class="item-club__photo">
+                            </div> 
+                        </div>
+
+                        <!-- Swiper starts -->
+
+                        <div class="swiper-container photo-swiper">
+                            <div class="swiper-wrapper photo-swiper-wrapper">
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-1.jpg" alt="Команда" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-2.jpg" alt="Команда" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-3.jpg" alt="Александр Петров" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-4.jpg" alt="Команда с тренером" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-5.jpg" alt="Антон Фаттахов" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-6.jpg" alt="Команда" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-7.jpg" alt="Команда" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-8.jpg" alt="Ян Киеня" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-9.jpg" alt="На тренировке" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                                <div class="swiper-slide photo-swiper-slide">
+                                    <div class="swiper-item swiper-item-photo">
+                                        <img src="../img/gallery-big-10.jpg" alt="Команда" class="swiper-img photo-swiper-img">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-prev"></div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+
+                        <!-- Swiper ends -->
+
+                    </section>
+                    <h3 class="media__title">Медиа</h3>
+                        <div class="media__container media__container_grid-5">
                             <div class="media__item media__item_vk">
                                 <a href="#!" class="media__link">
                                     <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -338,12 +363,11 @@
                                 </a>
                             </div>
                         </div>
-                    </div>
-                </aside>
+                </div>
             </div>
         </div>
     </main>
-
+    
     <footer class="footer">
         <div class="footer-wrapper _wrapper">
             <div class="footer__container">
@@ -377,6 +401,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/swiper.min.js"></script>
-    <script src="../js/news.js"></script>
+    <script src="../js/club.js"></script>
 </body>
 </html>

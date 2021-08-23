@@ -18,6 +18,9 @@
         @media screen and (max-width: 550px) {
             display: block;
         }
+        &_grid-none {
+            display: block;
+        }
     }
     &__left-side {
     }
@@ -471,6 +474,10 @@
             grid-template-columns: repeat(5, 1fr);
             column-gap: 5px;
             row-gap: 5px;
+        }
+        &_grid-5 {
+            max-width: 520px;
+            grid-template-columns: repeat(5, 1fr);
         }
     }
     &__item {

@@ -1,0 +1,194 @@
+.way {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__photo-box {
+        border-top: 2px solid $redcolor;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        @include adaptive-value-fromMax-toMin(margin-bottom, 32, 12);
+    }
+    &__article {
+        max-width: 600px;
+        @include adaptive-value-fromMax-toMin(margin-bottom, 32, 12);
+    }
+    .ekb-link-way {
+        max-width: 600px;
+    }
+}
+.photo-box {
+    &__title-block {
+        background-color: $textwhite;
+        @include adaptive-value-fromMax-to550(padding, 25, 10);
+        @media screen and (max-width: 550px) {
+            padding: 15px;
+        }
+    }
+    &__subtitle {
+        @include adaptive-value-fromMax-to550(margin-bottom, 15, 5);
+        color: $textsubtitle;
+        @extend %subtitleminiblock;
+        @media screen and (max-width: 550px) {
+            margin-bottom: 15px;
+            font-size: 7px;
+            line-height: 100%;
+        }
+    }
+    &__title {
+        @extend %titleblock;
+        color: $textblack;
+        @media screen and (max-width: 550px) {
+            line-height: 100%;
+        }
+    }
+}
+.article-way {
+    &__title {
+        @extend %titleblock;
+        @include adaptive-value-fromMax-toMin(margin-bottom, 32, 12);
+    }
+    &__text {
+        @extend %paragraph;
+        @include adaptive-value-fromMax-toMin(margin-bottom, 40, 20);
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+
+.club {
+    &__wrapper {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        margin-bottom: 25px;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: $footercolor;
+    }
+    &__item {
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        &:hover::before {
+            background-color: $footercolor;
+        }
+        &::before {
+            display: block;
+            position: absolute;
+            content: "";
+            background-color: transparent;
+            opacity: 40%;
+            width: 100%;
+            height: 100%;
+            transition: .5s;
+            z-index: 1;
+            pointer-events: none;
+        }
+        &_1 {
+            flex: 1 1 50%;
+        }
+        &_2 {
+            flex: 1 1 50%;
+        }
+        &_3 {
+            flex: 1 1 25%;
+            @media screen and (max-width: 550px) {
+                flex: 1 1 50%;
+            }
+        }
+        &_4 {
+            flex: 1 1 25%;
+            @media screen and (max-width: 550px) {
+                flex: 1 1 50%;
+            }
+        }
+        &_5 {
+            flex: 1 1 25%;
+            @media screen and (max-width: 550px) {
+                flex: 1 1 50%;
+            }
+        }
+        &_6 {
+            flex: 1 1 25%;
+            @media screen and (max-width: 550px) {
+                flex: 1 1 50%;
+            }
+        }
+        &_7 {
+            flex: 1 1 50%;
+        }
+        &_8 {
+            flex: 1 1 50%;
+        }
+        &_9 {
+            flex: 1 1 50%;
+        }
+        &_10 {
+            flex: 1 1 50%;
+        }
+    }
+}
+.item-club {
+    &__title {
+        @extend %titlesections;
+        @include adaptive-value-fromMax-toMin(font-size, 28, 13);
+        color: $textwhite;
+        position: absolute;
+        @include adaptive-value-fromMax-toMin(left, 25, 10);
+        bottom: 8.79%;
+        z-index: 1;
+        &::before {
+            content: "";
+            position: absolute;
+            @include adaptive-value-fromMax-to550(top, -10, -6);
+            left: 0;
+            width: 24px;
+            height: 4px;
+            background-color: $textwhite;
+            @media screen and (max-width: 550px) {
+                width: 16px;
+                height: 2px;
+            }
+        }
+    }
+    &__photo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transform: rotate(0deg) scale(1);
+        transition: .5s;
+        &:hover {
+            transform: rotate(1deg) scale(1.05);
+        }
+    }
+}
+.photo-swiper {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(23, 32, 48, .8);
+    z-index: 20;
+}
+.photo-swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.swiper-button-prev, .swiper-button-next {
+    color: $textwhite;
+    transition: .2s;
+    &:hover {
+        opacity: 50%;
+    }
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
+}
+.swiper-pagination .swiper-pagination-progressbar-fill {
+    background: $textwhite;
+}
