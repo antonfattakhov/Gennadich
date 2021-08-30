@@ -156,30 +156,19 @@ let header = document.querySelector('.header');
     const burger = document.querySelector('.burger-js');
     const menu = document.querySelector('.header__menu');
     // const menuCloseItem = document.querySelector('.header__nav__close');
-    // const menuLinks = document.querySelectorAll('.nav__link');
+    const menuLinks = document.querySelectorAll('.nav__link');
     
     function burgerClick () {
         menu.classList.toggle('header__menu_active');
         burger.classList.toggle('header__burger_active');
-        // hideScroll();
-        // menuLinks.forEach(each => {each.addEventListener('click', linkClick)});       
+        if (burger.classList.contains('header__burger_active')) {
+            hideScroll();
+        } else {
+            showScroll();
+        }  
     };
-
-    // function linkClick () {
-    //     menu.classList.remove('header__nav__active');
-    //     header.classList.add('header__active');
-    //     menu.addEventListener('transitionend', showScrollafterBurger);
-    //     menuLinks.forEach(each => {each.removeEventListener('click', linkClick)});
-    // };
-
-    // function closeClick () {
-    //     menu.classList.remove('header__nav__active');
-    //     if (window.pageYOffset > 84) {header.classList.add('header__active')}
-    //     header.removeChild(blur);
-    //     menu.addEventListener('transitionend', showScrollafterBurger);
-    // };    
+   
     burger.addEventListener('click', burgerClick);
-    // menuCloseItem.addEventListener('click', closeClick)
 }());
 
 // Inner-list animation
@@ -405,97 +394,104 @@ function pressEsc (event) {
 
 // Поиск на странице
 
-const searchIcon = document.querySelector('.site-options__item_search .site-options__button');
-const searchForm = document.querySelector('.site-options__input');
-let numberOfClicks = 0;
-let regInput;
-let regObj = new RegExp(regInput, 'i');
-let counter = 0;
-let doubleCounter;
-let foundElements = [];
-
-searchIcon.addEventListener('click', () => {
-    searchForm.classList.add('site-options__input_active');
-    searchForm.addEventListener('focus', () => {window.addEventListener('keydown', pressEnter)});
-    numberOfClicks += 1;
-    if (numberOfClicks > 1) {
-        searchText();
-    }
-
-    function pressEnter (event) {
-        if (event.keyCode == 13) {
+(function () {
+    const searchIcon = document.querySelector('.site-options__item_search .site-options__button');
+    const searchForm = document.querySelector('.site-options__input');
+    let numberOfClicks = 0;
+    let regInput;
+    let regObj = new RegExp(regInput, 'i');
+    let counter = 0;
+    let doubleCounter;
+    let foundElements = [];
+    
+    searchIcon.addEventListener('click', () => {
+        searchForm.classList.add('site-options__input_active');
+        searchForm.addEventListener('focus', () => {window.addEventListener('keydown', pressEnter)});
+        numberOfClicks += 1;
+        if (numberOfClicks > 1) {
             searchText();
         }
-};
-});
-
-function searchText () {
-
-    const textItems = document.querySelectorAll('main h2, main h3, main h4, main p, main figcaption');
-    let searchClosePopup = document.querySelector('.search-popup_close');
-    let searchChoosePopup = document.querySelector('.search-popup_choose');
-    let searchCloseBtn, searchChooseBtn;
-    let a = 0;
-
-    regInput = searchForm.value;
-    regObj = new RegExp(regInput, 'i');
-
-    doubleCounter = counter;
-
-    textItems.forEach(function(element, index, arr) {
-
-        if (element.innerHTML.search(regObj) != -1 && element.dataset.hide != 'yes') {
-            foundElements.push(element);
-            counter += 1;
-        }
-        
+    
+        function pressEnter (event) {
+            if (event.keyCode == 13) {
+                searchText();
+            }
+    };
     });
-
-    if (counter == doubleCounter) {
-        // Вывести сообщение, что ничего не найдено
-        searchClosePopup.classList.add('search-popup_active');
-        searchCloseBtn = searchClosePopup.querySelector('.search-popup__button_close');
-        searchCloseBtn.addEventListener('click', CloseSearch);
-    } else {
-        // Новый цикл с брейком и континью
-        searchCloseBtn = searchChoosePopup.querySelector('.search-popup__button_close');
-        searchChooseBtn = searchChoosePopup.querySelector('.search-popup__button_goahead');
-        searchCloseBtn.addEventListener('click', CloseSearch);
-        searchChooseBtn.addEventListener('click', ContinueSearch);
-
-        ContinueSearch();
-    }
-
-    function ContinueSearch () {
-        // Проверка на первый и последующие вызовы
-        if (a === 0) {
-            searchChoosePopup.classList.add('search-popup_active');
-            scrollTo(foundElements[a]);
-            a += 1;
-        } else if (a > 0 && a < foundElements.length) {
-            scrollTo(foundElements[a]);
-            a += 1;
+    
+    function searchText () {
+    
+        const textItems = document.querySelectorAll('main h2, main h3, main h4, main p, main figcaption');
+        let searchClosePopup = document.querySelector('.search-popup_close');
+        let searchChoosePopup = document.querySelector('.search-popup_choose');
+        let searchCloseBtn, searchChooseBtn;
+        let a = 0;
+    
+        if (searchForm.value == '') {
+            return false;
+        }
+        regInput = searchForm.value;
+    
+        regObj = new RegExp(regInput, 'i');
+    
+        doubleCounter = counter;
+    
+        textItems.forEach(function(element, index, arr) {
+    
+            if (element.innerHTML.search(regObj) != -1 && element.dataset.hide != 'yes') {
+                foundElements.push(element);
+                counter += 1;
+            }
+            
+        });
+    
+        if (counter == doubleCounter) {
+            // Вывести сообщение, что ничего не найдено
+            searchClosePopup.classList.add('search-popup_active');
+            searchCloseBtn = searchClosePopup.querySelector('.search-popup__button_close');
+            searchCloseBtn.addEventListener('click', CloseSearch);
         } else {
-            a = 0;
-            CloseSearch();
+            // Новый цикл с брейком и континью
+            searchCloseBtn = searchChoosePopup.querySelector('.search-popup__button_close');
+            searchChooseBtn = searchChoosePopup.querySelector('.search-popup__button_goahead');
+            searchCloseBtn.addEventListener('click', CloseSearch);
+            searchChooseBtn.addEventListener('click', ContinueSearch);
+    
+            ContinueSearch();
+        }
+    
+        function ContinueSearch () {
+            // Проверка на первый и последующие вызовы
+            if (a === 0) {
+                searchChoosePopup.classList.add('search-popup_active');
+                scrollTo(foundElements[a]);
+                a += 1;
+            } else if (a > 0 && a < foundElements.length) {
+                scrollTo(foundElements[a]);
+                a += 1;
+            } else {
+                a = 0;
+                CloseSearch();
+            }
+        }
+    
+        function CloseSearch () {  
+            if (counter != doubleCounter) {
+                searchChooseBtn.removeEventListener('click', ContinueSearch);
+                searchChoosePopup.classList.remove('search-popup_active');
+                a = 0;
+            } else {
+                searchClosePopup.classList.remove('search-popup_active');    
+            }
+            searchCloseBtn.removeEventListener('click', CloseSearch);
+            foundElements.splice(0, foundElements.length);
+            counter = 0;
+            doubleCounter = 0;
+            searchForm.value = '';       
         }
     }
+}());
 
-    function CloseSearch () {  
-        if (counter != doubleCounter) {
-            searchChooseBtn.removeEventListener('click', ContinueSearch);
-            searchChoosePopup.classList.remove('search-popup_active');
-            a = 0;
-        } else {
-            searchClosePopup.classList.remove('search-popup_active');    
-        }
-        searchCloseBtn.removeEventListener('click', CloseSearch);
-        foundElements.splice(0, foundElements.length);
-        counter = 0;
-        doubleCounter = 0;
-        searchForm.value = '';       
-    }
-}
 
 // Плавный скролл
 

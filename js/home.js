@@ -1,20 +1,23 @@
 // Стартовый экран
 
-document.addEventListener("DOMContentLoaded", () => setTimeout(startScreen, 4000));
-hideScroll();
+(function () {
+    document.addEventListener("DOMContentLoaded", () => setTimeout(startScreen, 4000));
+    hideScroll();
 
-const screen = document.querySelector('.start-screen');
+    const screen = document.querySelector('.start-screen');
 
-screen.addEventListener('click', (event) => {
-    event.stopPropagation();
-    screen.style.display = 'none';
-    startScreen();
-});
+    screen.addEventListener('click', (event) => {
+        event.stopPropagation();
+        screen.style.display = 'none';
+        startScreen();
+    });
 
-function startScreen () {
-    screen.classList.add('start-screen_active');
-    showScroll();
-}
+    function startScreen () {
+        screen.classList.add('start-screen_active');
+        showScroll();
+    }
+}());
+
 
 // Анимация раскрытия карточек
 
@@ -22,14 +25,11 @@ function startScreen () {
     const buttons = document.querySelectorAll('.main-button__container');
 
     let minipostContainers = Array.from(document.querySelectorAll('.main-section__mini-post-container')).map(function(element, index, arr) {return Array.from(element.querySelectorAll('.main-mini-post'))});
-    console.log(minipostContainers);
     let filterContainers = [];
-    // console.log(minipostArr);
-
-
-    const breakpoint = window.matchMedia("(max-width: 550px)");
 
     // Определяет, сколько карточек показывать во время загрузки страницы
+    const breakpoint = window.matchMedia("(max-width: 550px)");
+    
     if (breakpoint.matches) {
         minipostContainers.forEach(function (element, index, arr) {
             for (let i = 0; i < 2; i++) {
@@ -53,15 +53,8 @@ function startScreen () {
 
     })
 
-    // let arr1 = minipostContainers[0].filter(function (element, index, array) {
-    //             return element.classList.contains('display-none') === true;
-    //             });
-    // let arr2 = minipostContainers[1].filter(function (element, index, array) {
-    //     return element.classList.contains('display-none') === true;
-    //     });
-    console.log(filterContainers);
     breakpoint.addEventListener('change', () => {
-        // Перезагрузка страницы, чтобы раскрытие карточек было адекватным
+        // Перезагрузка страницы, чтобы раскрытие карточек было адекватным(только для проверок при resize)
         location.reload();
     });
 
@@ -74,10 +67,7 @@ function startScreen () {
 
         // Переменные-счетчики для раскрытия карточек по 2 или по 3 штуки
         let filterArr = arr;
-        // filterArr = arr;
         let filterArr2;
-
-        console.log(counter);
 
         // Проверка на окончание количества карточек
         if (counter < filterArr.length) {
@@ -142,7 +132,6 @@ function startScreen () {
                 maxHeight = filterArr2.reduce(function (acc, element) {
                     if (acc < element.firstElementChild.offsetHeight) {
                         acc = element.firstElementChild.offsetHeight;
-                        // console.log(element.firstElementChild.offsetHeight);
                     }
                     return acc;
                 }, 0)
@@ -174,7 +163,6 @@ function startScreen () {
                     }
                     
                 }
-                console.log(counter);
             }
         }
         // Закрытие всех открытых карточек
@@ -231,145 +219,3 @@ videoPostSportmaster.forEach(function(element, index, arr) {
 videoPostGuys.forEach(function(element, index, arr) {
     element.onclick = function () {localStorage.setItem("a", "guys");}
 });
-
-
-
-
-
-// Анимация раскрытия карточек. Версия для одного комплекта
-
-// (function() {
-//     const buttons = document.querySelectorAll('.main-button__container');
-//     let minipostArr = Array.from(document.querySelectorAll('.main-mini-post'));
-//     let filterArr;
-//     let filterArr2;
-
-//     const breakpoint = window.matchMedia("(max-width: 550px)");
-
-//     // Определяет, сколько карточек показывать во время загрузки страницы
-//     if (breakpoint.matches) {
-//         for (let i = 0; i < 2; i++) {
-//             minipostArr[i].classList.remove('display-none');
-//         }
-//     } else {
-//         for (let i = 0; i < 3; i++) {
-//             minipostArr[i].classList.remove('display-none');
-//         }
-//     }
-
-//     filterArr = minipostArr.filter(function (element, index, array) {
-//         return element.classList.contains('display-none') === true;
-//     });
-
-//     breakpoint.addEventListener('change', () => {
-//         // Перезагрузка страницы, чтобы раскрытие карточек было адекватным
-//         location.reload();
-//     });
-
-//     // Переменные-счетчики для раскрытия карточек по 2 или по 3 штуки
-//     let counter = 0;
-//     let indexOfFilterArr = 0;
-//     let maxHeight;
-
-
-//     function showMore () {
-
-//         // Проверка на окончание количества карточек
-//         if (counter < filterArr.length) {
-
-//             // Определяем какая ширина страницы
-//             if (breakpoint.matches) {
-//                 counter += 2;
-
-//                 // Фильтруем массив 2ой раз для сравнения высот только появляющихся карточек
-//                 filterArr2 = filterArr.filter(function(element, index, arr) {
-//                     if (indexOfFilterArr <= index && index < counter) {
-//                         console.log(element.firstElementChild.offsetHeight);
-//                     return element; 
-//                     }  
-//                 })
-//                 // Определяем наибольшую высоту, на которую раскроются карточки
-//                 maxHeight = filterArr2.reduce(function (acc, element) {
-//                     if (acc < element.firstElementChild.offsetHeight) {
-//                         acc = element.firstElementChild.offsetHeight;
-//                     }
-//                     return acc;
-//                 }, 0)
-
-//                 // Раскрытие карточек
-//                 for (i = indexOfFilterArr; i < counter; i++) {
-//                     filterArr[i].style.height = maxHeight + 'px';
-//                     filterArr[i].style.border = 2 + 'px';
-//                     filterArr[i].style.marginBottom = 25 + 'px';
-//                     filterArr[i].style.pointerEvents = 'unset';
-//                     filterArr[i].firstElementChild.style.height = 100 + '%';
-//                     console.log(filterArr[i]);
-//                     // Оба СетТаймаута для того, чтобы можно было расширять текст во время проверки. Более это ни к чему.
-//                     setTimeout(() => {
-//                         for (j = indexOfFilterArr - 2; j < counter; j++) {
-//                             filterArr[j].style.height = 'auto'; 
-//                         }
-//                     }, 500)
-//                 }
-//                 indexOfFilterArr += 2;
-//                 if (counter === filterArr.length) {
-//                     button.innerHTML = 'Актуальное - Скрыть';
-//                 }
-//             } else {
-//                 counter += 3;
-
-//                 // Фильтруем массив 2ой раз для сравнения высот только появляющихся карточек
-//                 filterArr2 = filterArr.filter(function(element, index, arr) {
-//                     if (indexOfFilterArr <= index && index < counter) {
-//                         console.log(element.firstElementChild.offsetHeight);
-//                     return element; 
-//                     }  
-//                 })
-//                 maxHeight = filterArr2.reduce(function (acc, element) {
-//                     if (acc < element.firstElementChild.offsetHeight) {
-//                         acc = element.firstElementChild.offsetHeight;
-//                         // console.log(element.firstElementChild.offsetHeight);
-//                     }
-//                     return acc;
-//                 }, 0)
-
-//                 for (i = indexOfFilterArr; i < counter; i++) {
-//                     filterArr[i].style.height = maxHeight + 'px';
-//                     filterArr[i].style.border = 2 + 'px';
-//                     filterArr[i].style.marginBottom = 25 + 'px';
-//                     filterArr[i].style.pointerEvents = 'unset';
-//                     filterArr[i].firstElementChild.style.height = 100 + '%';
-//                     console.log(filterArr[i]);
-//                     // Оба СетТаймаута для того, чтобы можно было расширять текст во время проверки. Более это ни к чему.
-//                     setTimeout(() => {
-//                         for (j = indexOfFilterArr - 3; j < counter; j++) {
-//                             filterArr[j].style.height = 'auto';
-//                         }
-//                     }, 500)
-//                 }
-//                 indexOfFilterArr += 3;
-//                 if (counter === filterArr.length) {
-//                     button.innerHTML = 'Актуальное - Скрыть';
-//                 }
-//             }
-//         }
-//         // Закрытие всех открытых карточек
-//         else {
-//             filterArr.forEach(function (element, index, array) {
-//                 element.style.height = maxHeight + 'px';
-//                 setTimeout(() => {
-//                     element.style.height = 0 + 'px';
-//                     element.style.border = 0;
-//                     element.style.marginBottom = 0;
-//                     element.style.pointerEvents = 'none';
-//                     element.firstElementChild.style.height = 'unset'; 
-//                 }, 0);
-//             });
-//             counter = 0;
-//             indexOfFilterArr = 0;
-//             button.innerHTML = 'Актуальное - Смотреть больше';
-//         }
-//     }
-
-//     buttons.forEach(function(element, index, arr) {element.addEventListener('click', showMore)});
-// }());

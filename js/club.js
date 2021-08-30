@@ -2,7 +2,6 @@
 
 let article = document.querySelector('.way');
 let club = document.querySelector('.club');
-
 let data = localStorage.getItem("a");
 
 if (data === "way") {
@@ -18,6 +17,7 @@ if (data === "way") {
     club.style.display = 'none';
 }
 
+
 // Индикация пункта меню
 
 (function () {
@@ -27,6 +27,7 @@ if (data === "way") {
     navArr[1].classList.add('nav__link_active');
 
 }());
+
 
 // Фильтр Путь-Фото
 
@@ -42,8 +43,7 @@ if (data === "way") {
        way.classList.add('top-nav__button-active');
     } else {
         photos.classList.add('top-nav__button-active');
-    }
-    
+    } 
 
     function showWay () {
 
@@ -66,6 +66,7 @@ if (data === "way") {
 
 }());
 
+
 // Подключение слайдера Екб
 
 (function () {
@@ -81,8 +82,6 @@ if (data === "way") {
     }); 
 
 }());
-
-
 
 
 // Подключение Слайдера галлереи
@@ -137,8 +136,8 @@ if (data === "way") {
 }());
 
 
-// Hide/Show scroll
 
+// Hide/Show scroll
 
 function hideScroll () {
     

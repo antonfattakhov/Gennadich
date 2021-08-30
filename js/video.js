@@ -21,8 +21,6 @@ function onYouTubeIframeAPIReady() {
     });
 }
 
-
-
 setTimeout(() => {
     console.log('ready');
     players[0].cueVideoById({
@@ -159,18 +157,13 @@ videotraining.addEventListener('click', () => {
     videotraining.setAttribute('controls', '');
 })
 
-
-
 videotraining.addEventListener('pause', () => {
     videotraining.nextElementSibling.classList.add('video-post__arrow');
 })
 
-
-
 videotraining.addEventListener('play', () => {
     videotraining.nextElementSibling.classList.remove('video-post__arrow');
 })
-
 
 arrowtraining.addEventListener('click', (event) => {
     arrowtraining.classList.remove('video-post__arrow');

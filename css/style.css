@@ -985,7 +985,7 @@ img {
 
 .column-list__item_team:nth-child(3)::before {
   left: -30px;
-  content: url(../img/kabanda-min.jpg);
+  content: url(../img/kabanda-min-min.jpg);
 }
 
 .column-list__item_team:nth-child(4)::before {
@@ -2572,7 +2572,7 @@ img {
 }
 
 .main-top {
-  background: url(../img/background.jpg) no-repeat right;
+  background: url(../img/background-min.jpg) no-repeat right;
   background-color: #172030;
 }
 
@@ -3162,6 +3162,10 @@ iframe {
   }
 }
 
+.way__photo-box_wide {
+  max-width: 100%;
+}
+
 .way__article {
   margin: 0 auto;
   max-width: 600px;
@@ -3178,6 +3182,10 @@ iframe {
   display: block;
   margin: 0 auto;
   max-width: 600px;
+}
+
+.photo-box_mb-0 {
+  margin-bottom: 0;
 }
 
 .photo-box__title-block {
@@ -4322,9 +4330,5 @@ iframe {
 }
 
 .main-article__text:last-child {
-  margin-bottom: 0;
-}
-
-.photo-box_mb-0 {
   margin-bottom: 0;
 }

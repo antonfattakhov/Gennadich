@@ -11,6 +11,9 @@
         max-width: 1000px;
         margin: 0 auto;
         @include adaptive-value-fromMax-toMin(margin-bottom, 32, 12);
+        &_wide {
+            max-width: 100%;
+        }
     }
     &__article {
         margin: 0 auto;
@@ -24,6 +27,9 @@
     }
 }
 .photo-box {
+    &_mb-0 {
+        margin-bottom: 0;
+    }
     &__title-block {
         background-color: $textwhite;
         @include adaptive-value-fromMax-to550(padding, 25, 10);
