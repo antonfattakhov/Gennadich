@@ -149,8 +149,10 @@ da.init();
 
 // Burger
 
+let header = document.querySelector('.header');
+
 (function () {
-    const header = document.querySelector('.header');
+    
     const burger = document.querySelector('.burger-js');
     const menu = document.querySelector('.header__menu');
     // const menuCloseItem = document.querySelector('.header__nav__close');
@@ -250,3 +252,284 @@ da.init();
         }
     });
 }());
+
+// Отправка некоторых данных при переходе по ссылкам
+
+const videoLinkLatinos = document.querySelector('.column-list__link_latinos-js');
+const videoLinkSportmaster = document.querySelector('.column-list__link_sportmaster-js');
+const videoLinkGuys = document.querySelector('.column-list__link_guys-js');
+const videoLinkWay = document.querySelector('.column-list__link_way-js');
+const videoLinkPhotos = document.querySelector('.column-list__link_photos-js');
+
+videoLinkLatinos.onclick = function () {
+    localStorage.setItem("a", "latinos");
+};
+
+videoLinkSportmaster.onclick = function () {
+    localStorage.setItem("a", "sportmaster");
+};
+
+videoLinkGuys.onclick = function () {
+    localStorage.setItem("a", "guys");
+};
+
+videoLinkWay.onclick = function () {
+    localStorage.setItem("a", "way");
+};
+
+videoLinkPhotos.onclick = function () {
+    localStorage.setItem("a", "photos");
+};
+
+// Открытие окна Логин
+
+const login = document.querySelector('.site-options__item_registr');
+const formLogin = document.querySelector('.login');
+const form = document.querySelector('.login__wrapper');
+
+form.onclick = function (event) {
+    event.stopPropagation();
+}
+
+login.addEventListener('click', () => {
+    formLogin.classList.add('login_active');
+    hideScroll();
+
+    
+    formLogin.addEventListener('click', () => {
+        formLogin.classList.remove('login_active');
+        showScroll();
+    });
+
+    
+});
+
+// Hide/Show scroll
+
+function hideScroll () {
+    
+    const getScrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    header.style.paddingRight = `${getScrollbarWidth}px`;
+    document.body.style.paddingRight = `${getScrollbarWidth}px`;
+    document.body.style.overflowY = 'hidden';
+    document.body.addEventListener('touchmove', hideforIOS, { passive: false });
+    window.addEventListener('keydown', pressEsc);
+} 
+
+function hideforIOS (event) {
+    event.preventDefault();
+}
+
+function showScroll (event) {
+
+    header.style.paddingRight = '';
+    document.body.style.paddingRight = '';
+    document.body.style.overflowY = 'visible';
+    document.body.removeEventListener('touchmove', hideforIOS);
+    window.removeEventListener('keydown', pressEsc);
+}
+
+function pressEsc (event) {
+        if (event.keyCode == 27) {
+            formLogin.classList.remove('login_active');
+            showScroll();
+        }
+};
+
+
+// Form validation
+
+(function () {
+
+    let regName = /^[a-zA-Z0-9]+$/;
+
+    const submitBtn = document.querySelector('.form__button');
+
+    submitBtn.addEventListener('click', submit);
+
+    function submit (event) {
+        let field1 = document.querySelector('#user-name');
+        let field2 = document.querySelector('#user-password');
+        let form = document.querySelector('.form');
+        event.preventDefault();
+
+        const userName = field1.value;
+        const userPhone = field2.value;
+        console.log(userName, userPhone);
+        
+        sendData(checkName(regName, userName), checkPhone(regName, userPhone));
+
+        function checkName (regName, userName) {
+            if (!regName.test(userName)) {
+                field1.style.backgroundColor = 'rgba(236, 53, 53, 0.4)';
+                field1.value = '';
+                field1.placeholder = 'Используй цифры или латиницу';
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function checkPhone (regName, userPhone) {
+            if (!regName.test(userPhone)) {
+                field2.style.backgroundColor = 'rgba(236, 53, 53, 0.4)';
+                field2.placeholder = 'Используй цифры или латиницу';
+                return false;
+            } else {
+                return true;
+            }
+        }
+        function wait() {
+            return new Promise(resolve => setTimeout(resolve, 3000));
+        }
+        async function sendData (a, b) {
+            console.log(a, b);
+            if (a && b) {
+                // Отправка формы
+                document.querySelector('.login__sending').style.display = 'block';
+                console.log('Данные отправляются');
+                await wait();
+                document.querySelector('.login__sending').style.display = 'none';
+                formLogin.classList.remove('login_active');
+                showScroll();
+
+                form.reset();              
+                
+                field1.style.backgroundColor = 'white';
+                field2.style.backgroundColor = 'white';
+            } else {
+                console.log('Что-то не верно');
+            }
+        }
+    }
+}());
+
+// Поиск на странице
+
+const searchIcon = document.querySelector('.site-options__item_search .site-options__button');
+const searchForm = document.querySelector('.site-options__input');
+let numberOfClicks = 0;
+let regInput;
+let regObj = new RegExp(regInput, 'i');
+let counter = 0;
+let doubleCounter;
+let foundElements = [];
+
+searchIcon.addEventListener('click', () => {
+    searchForm.classList.add('site-options__input_active');
+    searchForm.addEventListener('focus', () => {window.addEventListener('keydown', pressEnter)});
+    numberOfClicks += 1;
+    if (numberOfClicks > 1) {
+        searchText();
+    }
+
+    function pressEnter (event) {
+        if (event.keyCode == 13) {
+            searchText();
+        }
+};
+});
+
+function searchText () {
+
+    const textItems = document.querySelectorAll('main h2, main h3, main h4, main p, main figcaption');
+    let searchClosePopup = document.querySelector('.search-popup_close');
+    let searchChoosePopup = document.querySelector('.search-popup_choose');
+    let searchCloseBtn, searchChooseBtn;
+    let a = 0;
+
+    regInput = searchForm.value;
+    regObj = new RegExp(regInput, 'i');
+
+    doubleCounter = counter;
+
+    textItems.forEach(function(element, index, arr) {
+
+        if (element.innerHTML.search(regObj) != -1 && element.dataset.hide != 'yes') {
+            foundElements.push(element);
+            counter += 1;
+        }
+        
+    });
+
+    if (counter == doubleCounter) {
+        // Вывести сообщение, что ничего не найдено
+        searchClosePopup.classList.add('search-popup_active');
+        searchCloseBtn = searchClosePopup.querySelector('.search-popup__button_close');
+        searchCloseBtn.addEventListener('click', CloseSearch);
+    } else {
+        // Новый цикл с брейком и континью
+        searchCloseBtn = searchChoosePopup.querySelector('.search-popup__button_close');
+        searchChooseBtn = searchChoosePopup.querySelector('.search-popup__button_goahead');
+        searchCloseBtn.addEventListener('click', CloseSearch);
+        searchChooseBtn.addEventListener('click', ContinueSearch);
+
+        ContinueSearch();
+    }
+
+    function ContinueSearch () {
+        // Проверка на первый и последующие вызовы
+        if (a === 0) {
+            searchChoosePopup.classList.add('search-popup_active');
+            scrollTo(foundElements[a]);
+            a += 1;
+        } else if (a > 0 && a < foundElements.length) {
+            scrollTo(foundElements[a]);
+            a += 1;
+        } else {
+            a = 0;
+            CloseSearch();
+        }
+    }
+
+    function CloseSearch () {  
+        if (counter != doubleCounter) {
+            searchChooseBtn.removeEventListener('click', ContinueSearch);
+            searchChoosePopup.classList.remove('search-popup_active');
+            a = 0;
+        } else {
+            searchClosePopup.classList.remove('search-popup_active');    
+        }
+        searchCloseBtn.removeEventListener('click', CloseSearch);
+        foundElements.splice(0, foundElements.length);
+        counter = 0;
+        doubleCounter = 0;
+        searchForm.value = '';       
+    }
+}
+
+// Плавный скролл
+
+const smoothScroll = function (targetEl, duration) {
+    let target;
+    if (typeof targetEl === "object") {
+        target = targetEl;
+    } else {
+        target = document.getElementById(targetEl);
+    }
+    
+    let targetPosition = target.getBoundingClientRect().top - document.querySelector('.header').clientHeight - 12;
+    let startPosition = window.pageYOffset;
+    let startTime = null;
+
+    const ease = function(t,b,c,d) {
+        t /= d / 2;
+        if (t < 1) return c / 2 * t * t + b;
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    };
+
+    const animation = function(currentTime){
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const run = ease(timeElapsed, startPosition, targetPosition, duration);
+        window.scrollTo(0,run);
+        if (timeElapsed < duration) requestAnimationFrame(animation);
+    };
+    requestAnimationFrame(animation);
+
+};
+
+const scrollTo = function (data) {
+    const currentTarget = data;
+    smoothScroll(currentTarget, 1000);
+};

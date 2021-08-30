@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости</title>
+    <title>Матчи</title>
     <link rel="stylesheet" href="../css/style.min.css">
     <link rel="stylesheet" href="../css/swiper.style.min.css">
 </head>
@@ -222,17 +222,14 @@
     <main class="main">
         <div class="main-top">
             <div class="main-top__wrapper _wrapper">
-                <h2 class="main-top__title">Новости</h2>
+                <h2 class="main-top__title">Матчи</h2>
                 <nav class="main-top__nav top-nav">
                     <ul class="top-nav__body">
                         <li class="top-nav__item">
-                            <button class="top-nav__button button-all-js">Все</button>
+                            <button class="top-nav__button button-next-js top-nav__button-active">Предстоящие</button>
                         </li>
                         <li class="top-nav__item">
-                            <button class="top-nav__button button-interview-js">Интервью</button>
-                        </li>
-                        <li class="top-nav__item">
-                            <button class="top-nav__button button-opinion-js">Мнения</button>
+                            <button class="top-nav__button button-results-js">Результаты</button>
                         </li>
                     </ul>
                 </nav>
@@ -241,114 +238,184 @@
         <div class="main-wrapper _wrapper">
             <div class="main__container">
                 <div class="main__left-side">
-                    <section class="news">
-                        <div class="news__wrapper">
-                            <div class="news__post news-post topic-news">
-                                <a href="../templates/news/1.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-1.jpg" alt="Думы" class="news-post__img">
+                    <div class="match-next">
+                        <div class="main__match match">
+                            <h3 class="match__title">Ближайший</h3>
+                            <div class="match__block">
+                                <div class="match__poster match-poster match-poster-games">
+                                    <div class="match-poster__top">
+                                        <span class="match-poster__text">Чт 12 Авг - 20:00</span>
+                                        <span class="match-poster__text">Приходи и поддержи</span>
                                     </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Новости</h4>
-                                        <h3 class="news-post__title">Думы на финишной прямой</h3>
+                                    <div class="match-poster__body poster-body poster-body-games">
+                                        <div class="poster-body__block poster-body__block_1">
+                                            <img src="../img/match-1.jpg" alt="Кабанда">
+                                        </div>
+                                        <div class="poster-body__block poster-body__block_team-names">
+                                            <div data-da=".poster-body__block_1,425,1" class="poster-body__team-name">
+                                                <span>Кабанда</span>
+                                            </div>
+                                            <div class="poster-body__block_versus">
+                                                <img src="../img/svg/versus.svg" alt="versus">
+                                            </div>
+                                            <div data-da=".poster-body__block_2,425,1" class="poster-body__team-name">
+                                                <span>Gennadich</span>
+                                            </div>
+                                        </div>
+                                        <div class="poster-body__block poster-body__block_2">
+                                            <img src="../img/match-2.png" alt="Кабанда">
+                                        </div>
                                     </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-interview">
-                                <a href="../templates/news/2.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-2.jpg" alt="Александр Петров" class="news-post__img">
+                                    <div class="match-poster__bottom">
+                                        <span class="match-poster__text">Поле ФОК УрФУ</span>
                                     </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Интервью</h4>
-                                        <h3 class="news-post__title">История Александра Петрова</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-news">
-                                <a href="../templates/news/3.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-4.jpg" alt="Игра" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Галлерея</h4>
-                                        <h3 class="news-post__title">Игра в условиях туманного Альбиона</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-opinion">
-                                <a href="../templates/news/4.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-6.jpg" alt="Руслан Алимгулов" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Мнение</h4>
-                                        <h3 class="news-post__title">Мысли об игре бомбардира команды</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-news">
-                                <a href="../templates/news/5.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-7.jpg" alt="Илья Минников" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Новости</h4>
-                                        <h3 class="news-post__title">Свежие выводы</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-interview">
-                                <a href="../templates/news/6.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-8.jpg" alt="Григорий Лейба" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Интервью</h4>
-                                        <h3 class="news-post__title">Какова она, вратарская жизнь?</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-news">
-                                <a href="../templates/news/7.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-9.jpg" alt="Новая форма" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Галлерея</h4>
-                                        <h3 class="news-post__title">Раскрыт комплект домашней формы 21/22</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-interview">
-                                <a href="../templates/news/9.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-12.jpg" alt="Иван Щербина" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Интервью</h4>
-                                        <h3 class="news-post__title">Становление капитана команды</h3>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="news__post news-post topic-opinion">
-                                <a href="../templates/news/8.html" class="news-post__link">
-                                    <div class="news-post__pic">
-                                        <img src="../img/pic-10.jpg" alt="Василий Мамонтов" class="news-post__img">
-                                    </div>
-                                    <div class="news-post__title-block">
-                                        <h4 class="news-post__subtitle">Мнение</h4>
-                                        <h3 class="news-post__title">Рассуждение о предстоящем матче</h3>
-                                    </div>
-                                </a>
+                                </div>
                             </div>
                         </div>
-                    </section>
-                    
+                        <div class="">
+                            <h3 class="team-squad__title">Скоро</h3>
+                            <div class="match__block match-soon">
+                                <div class="match-soon__left">
+                                    <div class="match-soon__pic">
+                                        <img src="../img/match-soon-1.png" alt="" class="match-soon__img">
+                                    </div>
+                                    <div class="match-soon__team-name">
+                                        <span>Контейнер</span>
+                                    </div>
+                                </div>
+                                <div class="match-soon__right">
+                                    <div class="match-soon__place">
+                                        <span>Г</span>
+                                    </div>
+                                    <div class="match-soon__info">
+                                        <span>Чт 12 Авг - 20:00</span>
+                                        <span>Поле ФОК УрФУ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="match__block match-soon">
+                                <div class="match-soon__left">
+                                    <div class="match-soon__pic">
+                                        <img src="../img/match-soon-2.png" alt="" class="match-soon__img">
+                                    </div>
+                                    <div class="match-soon__team-name">
+                                        <span>NFL</span>
+                                    </div>
+                                </div>
+                                <div class="match-soon__right">
+                                    <div class="match-soon__place">
+                                        <span>Г</span>
+                                    </div>
+                                    <div class="match-soon__info">
+                                        <span>Чт 26 Авг - 21:00</span>
+                                        <span>Поле СК Юность</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="match-results">
+                        <div class="main__match match">
+                            <h3 class="match__title">Последний</h3>
+                            <div class="match__block">
+                                <div class="match__poster match-poster match-poster-games">
+                                    <div class="match-poster__top">
+                                        <span class="match-poster__text">Чт 19 Июль - 20:00</span>
+                                        <span class="match-poster__text">Поддержка удалась</span>
+                                    </div>
+                                    <div class="match-poster__body poster-body poster-body-games">
+                                        <div class="poster-body__block poster-body__block_1 poster-body__block_1-2">
+                                            <img src="../img/match-prev-1.png" alt="Темп">
+                                        </div>
+                                        <div class="poster-body__block poster-body__block_team-names">
+                                            <div data-da=".poster-body__block_1-2,425,1" class="poster-body__team-name">
+                                                <span>Темп</span>
+                                            </div>
+                                            <div class="poster-body__block_score">
+                                                <span>1</span>
+                                                <span>-</span>
+                                                <span>4</span>
+                                            </div>
+                                            <div data-da=".poster-body__block_2-2,425,1" class="poster-body__team-name">
+                                                <span>Gennadich</span>
+                                            </div>
+                                        </div>
+                                        <div class="poster-body__block poster-body__block_2 poster-body__block_2-2">
+                                            <img src="../img/match-2.png" alt="Кабанда">
+                                        </div>
+                                    </div>
+                                    <div class="match-poster__bottom">
+                                        <span class="match-poster__text">Поле ФОК УрФУ</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>   
+                        <div class="">
+                            <h3 class="team-squad__title">Предыдущие</h3>
+                            <div class="match__block match-soon match-soon_padding-min">
+                                <div class="match-soon__left">
+                                    <div class="match-soon__pic">
+                                        <img src="../img/match-prev-2.png" alt="" class="match-soon__img">
+                                    </div>
+                                    <div class="match-soon__team-name">
+                                        <span>Латиносы</span>
+                                    </div>
+                                </div>
+                                <div class="match-soon__right">
+                                    <div class="match-soon__place-wrap">
+                                        <div class="match-soon__place">
+                                            <span>Г</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="match-soon__info">
+                                        <span>Чт 12 Июль - 21:30</span>
+                                        <span>Поле ФОК УрФУ</span>
+                                    </div>
+                                    <div data-da=".match-soon__place-wrap,620,1" class="match-soon__score">
+                                        <div class="poster-body__block_score poster-body__block_score-black">
+                                            <span>1</span>
+                                            <span>-</span>
+                                            <span>4</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="match__block match-soon match-soon_padding-min">
+                                <div class="match-soon__left">
+                                    <div class="match-soon__pic">
+                                        <img src="../img/match-prev-3.png" alt="" class="match-soon__img">
+                                    </div>
+                                    <div class="match-soon__team-name">
+                                        <span>ВЦМ Урал</span>
+                                    </div>
+                                </div>
+                                <div class="match-soon__right">
+                                    <div class="match-soon__place-wrap match-soon__place-wrap-2">
+                                        <div class="match-soon__place">
+                                            <span>Г</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="match-soon__info">
+                                        <span>Чт 5 Июль - 21:00</span>
+                                        <span>Поле ФОК УрФУ</span>
+                                    </div>
+                                    <div data-da=".match-soon__place-wrap-2,620,1" class="match-soon__score">
+                                        <div class="poster-body__block_score poster-body__block_score-black">
+                                            <span>5</span>
+                                            <span>-</span>
+                                            <span>2</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <aside class="main__right-side right-side">
-                    <div data-da=".news__wrapper,550,3" class="ekb-wrapper">
-                        <a href="#!" class="ekb-link">
+                <aside class="main__right-side right-side right-side_padding-top">
+                    <div data-da=".main__left-side,550,3" class="ekb-wrapper">
+                        <a href="#!" class="ekb-link ekb-link-matches">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">
                                     <div class="swiper-slide">
@@ -456,6 +523,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/swiper.min.js"></script>
-    <script src="../js/news.js"></script>
+    <script src="../js/matches.js"></script>
 </body>
 </html>

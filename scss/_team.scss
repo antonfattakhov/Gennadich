@@ -21,7 +21,7 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         column-gap: 18px;
-        @media screen and (max-width: 768px) {
+        @media screen and (max-width: 550px) {
             grid-template-columns: repeat(2, 1fr);
             column-gap: 12px;
         }
@@ -82,10 +82,21 @@
             font-size: 30px;
         }
     }
+    &__pic {
+
+    }
+    &__img {
+        min-width: 100%;
+        min-height: 100%;
+        object-fit: cover;
+    }
+    &_last {
+        margin-bottom: 0;
+    }
 }
 .right-side_padding-top {
     @include adaptive-value-fromMax-to550(padding-top, 53, 48.2);
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 768px) {
         padding-top: 0;
     }
 }

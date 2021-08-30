@@ -1,3 +1,21 @@
+// Стартовый экран
+
+document.addEventListener("DOMContentLoaded", () => setTimeout(startScreen, 4000));
+hideScroll();
+
+const screen = document.querySelector('.start-screen');
+
+screen.addEventListener('click', (event) => {
+    event.stopPropagation();
+    screen.style.display = 'none';
+    startScreen();
+});
+
+function startScreen () {
+    screen.classList.add('start-screen_active');
+    showScroll();
+}
+
 // Анимация раскрытия карточек
 
 (function() {
@@ -54,8 +72,7 @@
 
     function showMore (arr, event) {
 
-    // Переменные-счетчики для раскрытия карточек по 2 или по 3 штуки
-        
+        // Переменные-счетчики для раскрытия карточек по 2 или по 3 штуки
         let filterArr = arr;
         // filterArr = arr;
         let filterArr2;
@@ -92,6 +109,10 @@
                     filterArr[i].style.pointerEvents = 'unset';
                     filterArr[i].firstElementChild.style.height = 100 + '%';
                     console.log(filterArr[i]);
+
+                    // Изменяем значение атрибута data, который влияет на поиск по странице
+                    filterArr[i].querySelectorAll('h2, h3, h4, p, figcaption').forEach(function(element) {element.dataset.hide = 'no'});
+
                     // Оба СетТаймаута для того, чтобы можно было расширять текст во время проверки. Более это ни к чему.
                     setTimeout(() => {
                         for (j = indexOfFilterArr - 2; j < counter; j++) {
@@ -101,7 +122,11 @@
                 }
                 indexOfFilterArr += 2;
                 if (counter === filterArr.length) {
-                    event.target.innerHTML = 'Актуальное - Скрыть';
+                    if (event.target.tagName == 'SPAN') {
+                        event.target.innerHTML = 'Скрыть';
+                    } else {
+                        event.target.firstElementChild.innerHTML = 'Скрыть';
+                    }  
                 }
                 console.log(counter);
             } else {
@@ -129,6 +154,10 @@
                     filterArr[i].style.pointerEvents = 'unset';
                     filterArr[i].firstElementChild.style.height = 100 + '%';
                     console.log(filterArr[i]);
+
+                    // Изменяем значение атрибута data, который влияет на поиск по странице
+                    filterArr[i].querySelectorAll('h2, h3, h4, p, figcaption').forEach(function(element) {element.dataset.hide = 'no'});
+
                     // Оба СетТаймаута для того, чтобы можно было расширять текст во время проверки. Более это ни к чему.
                     setTimeout(() => {
                         for (j = indexOfFilterArr - 3; j < counter; j++) {
@@ -138,7 +167,12 @@
                 }
                 indexOfFilterArr += 3;
                 if (counter === filterArr.length) {
-                    event.target.innerHTML = 'Актуальное - Скрыть';
+                    if (event.target.tagName == 'SPAN') {
+                        event.target.innerHTML = 'Скрыть';
+                    } else {
+                        event.target.firstElementChild.innerHTML = 'Скрыть';
+                    }
+                    
                 }
                 console.log(counter);
             }
@@ -152,12 +186,21 @@
                     element.style.border = 0;
                     element.style.marginBottom = 0;
                     element.style.pointerEvents = 'none';
-                    element.firstElementChild.style.height = 'unset'; 
+                    element.firstElementChild.style.height = 'unset';
+
+                    // Изменяем значение атрибута data, который влияет на поиск по странице
+                    element.querySelectorAll('h2, h3, h4, p, figcaption').forEach(function(element) {element.dataset.hide = 'yes'});
+                    
                 }, 0);
             });
             counter = 0;
             indexOfFilterArr = 0;
-            event.target.innerHTML = 'Актуальное - Смотреть больше';
+            // event.target.innerHTML = 'Актуальное - Смотреть больше';
+            if (event.target.tagName == 'SPAN') {
+                event.target.innerHTML = 'Смотреть больше';
+            } else {
+                event.target.firstElementChild.innerHTML = 'Смотреть больше';
+            }
         }
     }
 
@@ -171,6 +214,23 @@
 }());
 
 
+// Отправка некоторых данных при переходе по ссылкам
+
+const videoPostLatinos = document.querySelector('.main-post__link_latinos-js');
+const videoPostSportmaster = document.querySelectorAll('.main-mini-post__link_sportmaster-js');
+const videoPostGuys = document.querySelectorAll('.main-mini-post__link_guys-js');
+
+videoPostLatinos.onclick = function () {
+    localStorage.setItem("a", "latinos");
+};
+
+videoPostSportmaster.forEach(function(element, index, arr) {
+    element.onclick = function () {localStorage.setItem("a", "sportmaster");}
+});
+
+videoPostGuys.forEach(function(element, index, arr) {
+    element.onclick = function () {localStorage.setItem("a", "guys");}
+});
 
 
 

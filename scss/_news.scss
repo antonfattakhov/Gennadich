@@ -173,7 +173,9 @@
 // Swiper additional styles start
 
 .ekb-wrapper {
-    margin-bottom: 25px;
+    margin: 0 auto;
+    @include adaptive-value-fromMax-to550(margin-bottom, 25, 12);
+    max-width: 302px;
     @media screen and (max-width: 550px) {
         margin-top: 12px;
         margin-bottom: 12px;
@@ -186,9 +188,8 @@
         font-family: 'Circe';
         font-style: normal;
         font-weight: bold;
-        @include adaptive-value-fromMax-to550(font-size, 33, 13);
-        @media screen and (max-width: 550px) {
-            font-size: 33px;
+        @include adaptive-value-fromMax-to768(font-size, 33, 20);
+        @media screen and (max-width: 768px) {
             @include adaptive-value-from550-to320(font-size, 33, 23);
         }
         line-height: 100%;
@@ -199,7 +200,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
-    @media screen and (max-width: 550px) {
+    @media screen and (max-width: 768px) {
         display: flex;
         justify-content: center;
     }

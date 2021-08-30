@@ -1,0 +1,308 @@
+// Login styles start
+
+.login {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s;
+    z-index: 20;
+    &__wrapper {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -150%);
+        width: 500px;
+        opacity: 0;
+        transition: .2s;
+    }
+    &__top {
+        background-color: $redcolor;
+        text-align: center;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+    &__title {
+        font-family: 'Agency FB Cyrillic';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 52px;
+        line-height: 60px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+    }
+    &__body {
+        background-color:$textwhite;
+        padding: 30px 100px;
+        @media screen and (max-width: 425px) {
+            padding: 30px 100px;
+        }
+    }
+    &_active {
+        visibility: visible;
+        opacity: 1;
+        .login__wrapper {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            @media screen and (max-width: 768px) {
+                transform: translate(-50%, -50%) scale(.9);
+            }
+            @media screen and (max-width: 550px) {
+                transform: translate(-50%, -50%) scale(.8);
+            }
+            @media screen and (max-width: 425px) {
+                transform: translate(-50%, -50%) scale(.6);
+            }
+        }
+    }
+    &__sending {
+        display: none;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, .5);
+        .sending-circles {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            svg {
+                margin-right: 10px;
+                &:nth-child(1) {
+                    circle {
+                        animation: blink 3s ease-in-out forwards;
+                    }
+                }
+                &:nth-child(2) {
+                    circle {
+                        animation: blink 3s ease-in-out .2s forwards;
+                    }
+                }
+                &:nth-child(3) {
+                    margin-right: 0;
+                    circle {
+                        animation: blink 3s ease-in-out .4s forwards;
+                    }
+                }
+            }
+        }
+    }
+}
+@keyframes blink {
+    0% {
+        fill: #172030;
+    }
+    25% {
+        fill: #F00000;
+    }
+    50% {
+        fill: #172030;
+    }
+    75% {
+        fill: #F00000;
+    }
+    100% {
+        fill: #172030;
+    }
+}
+.login-body {
+    &__text {
+        font-family: Circe;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 100%;
+        text-align: center;
+        color: #454D59;
+        margin-bottom: 25px;
+        &_2 {
+            margin-bottom: 15px;
+        }
+        @media screen and (max-width: 425px) {
+            font-size: 20px;
+        }
+    }
+    &__form {
+        margin-bottom: 25px;
+    }
+    &__media {
+        text-align: center;
+    }
+    &__link {
+        display: inline-block;
+        path, rect, circle {
+            transition: .2s;
+        }
+        &:first-child {
+            margin-right: 15px; 
+        }
+        &:last-child svg:hover {
+            cursor: pointer;
+            path {
+                fill: $redcolor;
+            }
+        }
+        &:first-child svg:hover {
+            cursor: pointer;
+            rect, circle {
+                stroke: $redcolor;
+            }
+            .circle {
+                fill: $redcolor;
+            }
+        }
+        
+    }
+}
+
+.form {
+    &__input {
+    }
+    &__field {
+        border: 1px solid $textsubtitle;
+        width: 100%;
+        height: 100%;
+        padding-top: 17px;
+        padding-left: 25px;
+        padding-bottom: 17px;
+        margin-bottom: 25px;
+        font-family: 'Circe';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 11px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: #72767E;
+        @media screen and (max-width: 425px) {
+            font-size: 14px;
+        }
+    }
+    &__button {
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: 'Circe';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 11px;
+        line-height: 16px;
+        text-transform: uppercase;
+        color: $textwhite;
+        background-color: $redcolor;
+        transition: .2s;
+        @media screen and (max-width: 425px) {
+            font-size: 14px;
+        }
+        &:active {
+            background-color: $footercolor;
+        }
+    }
+}
+.form-button {
+    &__container {
+    }
+    &__text {
+    }
+}
+.button {
+    &__js {
+    }
+}
+
+.circle {
+}
+
+// Login styles end
+
+
+// Search styles start
+
+.search-popup {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    // background-color: rgba(0, 0, 0, .5);
+    visibility: hidden;
+    opacity: 0;
+    transition: .2s;
+    z-index: 20;
+    &__wrapper {
+        position: absolute;
+        background-color: $footercolor;
+        top: 80%;
+        left: 50%;
+        transform: translate(-50%, +150%);
+        width: 600px;        
+        transition: .2s;
+    }
+    &_close {
+        .search-popup__wrapper {
+            top: 50%;
+        }
+    }
+    &__title {
+        font-size: 35px;
+    }
+    &__top {
+        background-color: $footercolor;
+    }
+    &__body {
+        padding: 30px 0;
+        display: flex;
+        justify-content: space-around;
+        background-color: $textblack;
+    }
+    &__button {
+        width: 230px;
+        color: $textwhite;
+        background-color: $textblack;
+        border: 1px solid $textwhite;
+        transition: .2s;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-family: 'Circe';
+        font-style: normal;
+        font-weight: bold;
+        font-size: 11px;
+        line-height: 16px;
+        text-transform: uppercase;
+
+        @media screen and (max-width: 425px) {
+            font-size: 14px;
+        }
+        &:active {
+            background-color: $redcolor;
+            border: 1px solid $redcolor;
+            color: $textwhite;
+        }
+    }
+    &_active {
+        visibility: visible;
+        opacity: 1;
+        .search-popup__wrapper {
+            transform: translate(-50%, -50%);
+            @media screen and (max-width: 768px) {
+                transform: translate(-50%, -50%) scale(.9);
+            }
+            @media screen and (max-width: 550px) {
+                transform: translate(-50%, -50%) scale(.8);
+            }
+            @media screen and (max-width: 508px) {
+                transform: translate(-50%, -50%) scale(.6);
+            }
+            @media screen and (max-width: 390px) {
+                transform: translate(-50%, -50%) scale(.45);
+            }
+        }
+    }
+}
+
+// Search styles end

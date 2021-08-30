@@ -1,0 +1,251 @@
+.match {
+    &__title {
+        @extend %titlesections;
+        color: $blackcolor;
+        margin-bottom: 25px;
+        position: relative;
+        &::after {
+            content: "";
+            position: absolute;
+            @include adaptive-value-fromMax-to550(bottom, -6, -10);
+            left: 0;
+            width: 24px;
+            height: 4px;
+            background-color: #C4C4C4;
+        }
+        @media screen and (max-width: 550px) {
+            margin-top: 13px;
+        }
+    }
+    &__block {
+    }
+    &__poster {
+        background-color: $footercolor;
+        @include adaptive-value-fromMax-to550(padding, 20, 10);
+        @media screen and (max-width: 550px) {
+            padding: 20px;
+        }
+    }
+}
+.match-poster-games {
+    margin-bottom: 25px;
+    
+}
+.poster-body-games {
+    @media screen and (max-width: 900px) {
+        flex-direction: row;
+    }
+}
+.match-poster {
+    
+    &__top {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__text {
+    }
+    &__body {
+        flex-wrap: nowrap;
+        @media screen and (max-width: 425px) {
+            padding: 20px;
+            justify-content: space-between;
+        }
+    }
+    &__bottom {
+        line-height: 100%
+    }
+}
+.poster-body {
+    &__block {
+        @include adaptive-value-fromMax-to550(width, 125, 70);
+        @media screen and (max-width: 550px) {
+            width: 70px;
+        }
+        @media screen and (max-width: 425px) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        &_team-names {
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            @include adaptive-value-fromMax-to550(width, 387, 170);
+            @media screen and (max-width: 550px) {
+                width: 170px;
+            }
+            @media screen and (max-width: 425px) {
+                width: 40px;
+            }
+        }
+        &_versus {
+            @include adaptive-value-fromMax-to550(width, 20, 10);
+            @media screen and (max-width: 550px) {
+                width: 10px;
+            }
+        }
+        &_score {
+            display: flex;
+            flex-wrap: nowrap;
+            font-family: 'Fira Sans Extra Condensed';
+            font-style: normal;
+            font-weight: 300;
+            @include adaptive-value-fromMax-to768(font-size, 50, 40);
+            font-size: 50px;
+            line-height: 100%;
+            color: #FFFFFF;
+            span:nth-child(2) {
+                color: #C6C6C6;
+            }
+            span:last-child {
+                color: $redcolor;
+            }
+            &-black {
+                span:first-child {
+                    color: $textblack;
+                }
+            }
+        }
+    }
+    &__team-name {
+        @extend %subtitleminiblock;
+        @include adaptive-value-fromMax-to550(font-size, 23, 12);
+
+        line-height: 100%;
+        color: $textwhite;
+        @media screen and (max-width: 550px) {
+            font-size: 12px;
+        }
+        @media screen and (max-width: 425px) {
+            margin-top: 20px;
+        }
+    }
+}
+
+.match-soon {
+    border-top: 2px solid $redcolor;
+    background-color: $textwhite;
+    margin-bottom: 25px;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    @include adaptive-value-fromMax-to768(padding-right, 190, 25);
+    @include adaptive-value-fromMax-to768(padding-left, 74, 25);
+    @include adaptive-value-fromMax-to550(padding-top, 25, 20);
+    @include adaptive-value-fromMax-to550(padding-bottom, 25, 20);
+    @media screen and (max-width: 768px) {
+        padding: 20px 25px;
+    }
+    &_padding-min {
+        @include adaptive-value-fromMax-to768(padding-right, 50, 25);
+        .match-soon__info {
+            @include adaptive-value-fromMax-to768(margin-right, 83, 25);
+            @media screen and (max-width: 768px) {
+                margin-right: 25px;
+            }
+            @media screen and (max-width: 425px) {
+                margin-right: 15px;
+            }
+        }
+    }
+    &__left {
+        display: flex;
+        align-items: center;
+        flex-wrap: nowrap;
+        @media screen and (max-width: 425px) {
+            flex-direction: column;
+        }
+    }
+    &__right {
+        display: flex;
+        align-items: center
+    }
+    &__pic {
+        @include adaptive-value-fromMax-to550(width, 82, 50);
+        @include adaptive-value-fromMax-to768(margin-right, 73, 25);
+        @media screen and (max-width: 768px) {
+            margin-right: 25px;
+        }
+        @media screen and (max-width: 550px) {
+            width: 50px;
+        }
+        @media screen and (max-width: 425px) {
+            margin-right: 0;
+        }
+    }
+    &__img {
+    }
+    &__team-name {
+        // margin-right: 24.8%;
+        font-family: 'Circe';
+        font-style: normal;
+        font-weight: bold;
+        line-height: 100%;
+        color: #454D59;
+        @include adaptive-value-fromMax-to550(font-size, 23, 15);
+        @media screen and (max-width: 550px) {
+            font-size: 15px;
+        }
+        @media screen and (max-width: 425px) {
+            margin-top: 15px;
+        }
+    }
+    &__place-wrap {
+        height: 84px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        @include adaptive-value-fromMax-to550(margin-right, 25, 15);
+        @media screen and (max-width: 550px) {
+            margin-right: 15px;
+        }
+        .match-soon__place {
+            margin-right: 0;
+        }
+    }
+    &__place {
+        @include adaptive-value-fromMax-to550(margin-right, 25, 15);
+        border: 1px solid $bgcolor;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            @extend %titleblock;
+            color: $redcolor;
+            @media screen and (max-width: 550px) {
+                font-size: 15px;
+            }
+        }
+        @include adaptive-value-fromMax-to550(width, 50, 25);
+        @include adaptive-value-fromMax-to550(height, 50, 25);
+        @media screen and (max-width: 550px) {
+            width: 25px;
+            height: 25px;
+            margin-right: 15px;
+        }
+    }
+    &__info {
+        height: 84px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-left: 1px solid #C6C6C6;
+        @include adaptive-value-fromMax-to550(padding-left, 25, 15);
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        span {
+            font-family: 'Circe';
+            font-style: normal;
+            font-weight: bold;
+            @include adaptive-value-fromMax-toMin(font-size, 16, 10);
+            line-height: 100%;
+            color: #454D59;
+        }
+        @media screen and (max-width: 550px) {
+            padding-left: 15px;
+        }
+    }
+}

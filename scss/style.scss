@@ -25,8 +25,26 @@ img {
     padding: 0 15px;
     margin: 0 auto;
 }
+::-webkit-scrollbar {
+    width: 15px;
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $redcolor;
+    // border-radius: 15px;
+    // border: 2px solid white;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: $footercolor;
+    // background-color: #CCCCCC;
+}
 
 @import "_header.scss";
+@import "_popups.scss";
 @import "_home.scss";
 @import "_footer.scss";
 
@@ -37,3 +55,7 @@ img {
 @import "_club.scss";
 
 @import "_team.scss";
+
+@import "_matches";
+
+@import "_postsnews";

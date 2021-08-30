@@ -1,19 +1,25 @@
 .way {
     &__wrapper {
-        display: flex;
+        // display: flex;
         flex-direction: column;
         align-items: center;
+        margin-bottom: 25px;
     }
     &__photo-box {
         border-top: 2px solid $redcolor;
         box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+        max-width: 1000px;
+        margin: 0 auto;
         @include adaptive-value-fromMax-toMin(margin-bottom, 32, 12);
     }
     &__article {
+        margin: 0 auto;
         max-width: 600px;
         @include adaptive-value-fromMax-toMin(margin-bottom, 32, 12);
     }
     .ekb-link-way {
+        display: block;
+        margin: 0 auto;
         max-width: 600px;
     }
 }
@@ -71,6 +77,11 @@
         position: relative;
         overflow: hidden;
         cursor: pointer;
+        &:hover {
+            .item-club__title_black {
+                color: $textwhite;
+            }
+        }
         &:hover::before {
             background-color: $footercolor;
         }
@@ -138,7 +149,12 @@
         position: absolute;
         @include adaptive-value-fromMax-toMin(left, 25, 10);
         bottom: 8.79%;
+        transition: .5s;
         z-index: 1;
+        &_black {
+            color: $blackcolor;
+            transition: .5s;
+        }
         &::before {
             content: "";
             position: absolute;
@@ -156,7 +172,7 @@
     &__photo {
         width: 100%;
         height: 100%;
-        object-fit: contain;
+        object-fit: cover;
         transform: rotate(0deg) scale(1);
         transition: .5s;
         &:hover {

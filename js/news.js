@@ -1,3 +1,16 @@
+// Индикация пункта меню
+
+(function () {
+
+    let navArr = document.querySelectorAll('.nav__link');
+
+    navArr[0].classList.add('nav__link_active');
+
+}());
+
+
+
+
 // Фильтр Все-Интервью-Мнение
 
 (function () {
@@ -10,6 +23,8 @@
     let newsArr = document.querySelectorAll('.topic-news');
     let interviewArr = document.querySelectorAll('.topic-interview');
     let opinionArr = document.querySelectorAll('.topic-opinion');
+
+    all.classList.add('top-nav__button-active');
 
     function showAll () {
 

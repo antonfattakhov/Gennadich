@@ -14,15 +14,17 @@
         column-gap: 2%;
         @media screen and (max-width: 768px) {
             padding-top: 0;
+            display: block;
         }
         @media screen and (max-width: 550px) {
-            display: block;
+            
         }
         &_grid-none {
             display: block;
         }
     }
     &__left-side {
+        margin-bottom: 25px;
     }
     &__section {
         &_actual {
@@ -96,6 +98,9 @@
         transition: .5s;
         @media screen and (max-width: 768px) {
             margin-bottom: 12px;
+        }
+        &_mb-25 {
+            margin-bottom: 25px;
         }
     }
     &__button {
@@ -324,6 +329,7 @@
 }
 .main-button {
     &__container {
+        display: block;
         @include adaptive-value-fromMax-to550(padding, 10, 5);
         background-color: $redcolor;
         text-align: center;
@@ -349,7 +355,7 @@
         @include adaptive-value-fromMax-to550(margin-bottom, 25, 15);
         background-color: $footercolor;
         border-top: 2px solid $redcolor;
-        @media screen and (max-width: 550px) {
+        @media screen and (max-width: 768px) {
             padding: 20px;
             margin-bottom: 12px;
         }
@@ -362,6 +368,9 @@
         &:hover {
             figcaption {
                 color: $redcolor;
+            }
+            .poster-body__block path {
+                fill: $redcolor;
             }
         }
     }
@@ -388,7 +397,7 @@
             @include adaptive-value-fromMax-to550(padding-top, 30, 20);
             @include adaptive-value-fromMax-to550(padding-bottom, 30, 20);
         }
-        @media screen and (max-width: 550px) {
+        @media screen and (max-width: 768px) {
             flex-direction: row;
             padding-top: 30px;
             padding-bottom: 30px;
@@ -413,7 +422,10 @@
         }
         &_versus {
             // position: relative;
-            
+            path {
+                fill: $textsubtitle;
+                transition: .5s;
+            }
             @include adaptive-value-fromMax-to550(width, 20, 7);
             // padding-top: 100%;
             @media screen and (max-width: 900px) {
@@ -424,6 +436,9 @@
                 width: 20px;
                 margin-top: 0;
                 margin-bottom: 0;
+            }
+            img {
+                vertical-align: middle;
             }
         }
     }
@@ -470,7 +485,7 @@
         grid-template-columns: repeat(3, 1fr);
         @include adaptive-value-fromMax-to550(column-gap, 15, 5);
         @include adaptive-value-fromMax-to550(row-gap, 15, 5);
-        @media screen and (max-width: 550px) {
+        @media screen and (max-width: 768px) {
             grid-template-columns: repeat(5, 1fr);
             column-gap: 5px;
             row-gap: 5px;
@@ -563,3 +578,56 @@
     }
 }
 // main styles end
+
+// start screen
+
+.start-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $textwhite;
+    visibility: visible;
+    opacity: 1;
+    z-index: 25;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .svg {
+        animation-name: gen;
+        animation-fill-mode: forwards;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        stroke-dasharray: 500;
+        stroke-dashoffset: 500;
+        stroke-linecap: round;
+
+        @keyframes gen {
+            0% {
+                stroke-dashoffset: 500;
+            }
+            100% {
+                stroke-dashoffset: 0;
+            } 
+        }
+    }
+
+    // &__title {
+    //     font-family: 'Agency FB Cyrillic';
+    //     font-style: normal;
+    //     font-weight: normal;
+    //     @include adaptive-value-fromMax-toMin(font-size, 150, 40);
+    //     line-height: 100%;
+    //     letter-spacing: 0.155em;
+    //     color: #F00000;
+    // }
+    &_active {
+        visibility: hidden;
+        opacity: 0;
+        transition: 3s;
+    }
+}

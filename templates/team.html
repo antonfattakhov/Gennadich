@@ -13,7 +13,7 @@
         <div class="header-wrapper _wrapper">
             <div class="header__container">
                 <div class="header__logo">
-                    <a href="#!" class="logo__link">
+                    <a href="/templates/index.html" class="logo__link">
                         <img src="../img/svg/gennadich-logo-big.svg" alt="Gennadich">    
                     </a>
                 </div>
@@ -38,25 +38,26 @@
                         </div>
                         <div data-da=".header__container,768,1" class="icons__group site-options">
                             <div class="site-options__item site-options__item_registr">
-                                <a href="#!" class="site-options__link">
+                                <div class="site-options__button">
                                     <img src="../img/svg/man-pic.svg" alt="man">
-                                </a>
+                                </div>
                             </div>
                             <div class="site-options__item site-options__item_search">
-                                <a href="#!" class="site-options__link">
+                                <input type="text" name="user-search" class="site-options__input" id="search" placeholder="Поиск на странице">
+                                <div class="site-options__button">
                                     <img src="../img/svg/search-pic.svg" alt="search">
-                                </a>
+                                </div>
                             </div>
                         </div>
                     </div>
                     <div class="menu__section menu__section_bottom nav">
                         <nav class="nav__body">
                             <ul class="nav__list">
-                                <li class="nav__item"><a href="#!" class="nav__link">Новости</a></li>
-                                <li class="nav__item"><a href="#!" class="nav__link">Клуб</a></li>
-                                <li class="nav__item"><a href="#!" class="nav__link">Состав</a></li>
-                                <li class="nav__item"><a href="#!" class="nav__link">Матчи</a></li>
-                                <li class="nav__item"><a href="#!" class="nav__link">Видео</a></li>
+                                <li class="nav__item"><a href="/templates/news.html" class="nav__link">Новости</a></li>
+                                <li class="nav__item"><a href="/templates/club.html" class="nav__link">Клуб</a></li>
+                                <li class="nav__item"><a href="/templates/team.html" class="nav__link">Состав</a></li>
+                                <li class="nav__item"><a href="/templates/matches.html" class="nav__link">Матчи</a></li>
+                                <li class="nav__item"><a href="/templates/video.html" class="nav__link">Видео</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -68,6 +69,84 @@
         </div>
     </header>
 
+    <div class="login">
+        <div class="login__wrapper">
+            <div class="login__top">
+                <h3 class="login__title">зарегистрируйся</h3>
+            </div>
+            <div class="login__body login-body">
+                <p class="login-body__text">Чтобы быть в теме всех событий, происходящими с нашим клубом заполни поля ниже.</p>
+                <form action="#!" class="login-body__form form">
+                    <div class="form__input"><input type="text" name="user-name" class="form__field" id="user-name" placeholder="Придумай логин"></div>
+                    <div class="form__input"><input type="text" name="user-password" class="form__field" id="user-password" placeholder="Придумай пароль"></div>
+                    <button type="submit" class="form__button form-button button__js">
+                        <span class="form-button__container"></span>
+                          <span class="form-button__text">Отправить</span>
+                        </button>
+                </form>
+                <p class="login-body__text login-body__text_2">Будь частью нас!</p>
+                <div class="login-body__media">
+                    <a class="login-body__link login-body__link_instagram">
+                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="3" y="4" width="35" height="35" rx="8" stroke="#72767E" stroke-width="2"/>
+                            <circle cx="21" cy="22" r="8" stroke="#72767E" stroke-width="2"/>
+                            <circle class="circle" cx="31.5" cy="11.5" r="1.5" fill="#72767E"/>
+                        </svg>
+                    </a>
+                    <a class="login-body__link login-body__link_youtube">
+                        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M7.16838 7.31586C3.74949 7.77234 3.21413 8.08067 1.97937 10.3024C1.18392 11.7347 1.00921 13.5525 1.00022 20.5183C0.987299 30.3182 1.53951 32.6089 4.26575 34.0548C5.82857 34.8836 7.92283 34.9984 21.4933 34.9984C42.6589 34.9984 41.9977 35.4565 41.9977 20.7917C41.9977 11.3444 41.4876 9.3047 38.762 7.85434C37.3446 7.09991 12.017 6.66858 7.16838 7.31586ZM28.4002 20.6998L17.4206 25.9573C17.4206 25.9573 17.3686 23.5112 17.3686 20.5044C17.3686 17.4976 17.3166 15.0515 17.3166 15.0515L28.4002 20.6998Z" fill="#72767E"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="login__sending sending-circles">
+                <div class="sending-circles">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="18" fill="#172030"/>
+                    </svg>
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="18" fill="#172030"/>
+                    </svg>
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="18" cy="18" r="18" fill="#172030"/>
+                    </svg>    
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="search-popup search-popup_close">
+        <div class="search-popup__wrapper">
+            <div class="login__top search-popup__top">
+                <h3 class="login__title search-popup__title">На этой странице ничего не найдено</h3>
+            </div>
+            <div class="login__body login-body search-popup__body">
+                <button type="submit" class="form-button button__js search-popup__button search-popup__button_close">
+                    <span class="form-button__container"></span>
+                    <span class="form-button__text">Закрыть</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="search-popup search-popup_choose">
+        <div class="search-popup__wrapper">
+            <div class="login__top search-popup__top">
+                <h3 class="login__title search-popup__title">Результат поиска выше</h3>
+            </div>
+            <div class="login__body login-body search-popup__body">
+                <button type="submit" class="form-button button__js search-popup__button search-popup__button_goahead">
+                    <span class="form-button__container"></span>
+                    <span class="form-button__text">Искать еще</span>
+                </button>
+                <button type="submit" class="form-button button__js search-popup__button search-popup__button_close">
+                    <span class="form-button__container"></span>
+                    <span class="form-button__text">Остановить поиск</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <div class="header__inner-list inner-list">
         <div class="inner-list-wrapper _wrapper">
             <div class="inner-list__container">
@@ -75,18 +154,18 @@
                     <li class="inner-list__item inner-column">
                         <h2 class="inner-column__title">В тренде</h2>
                         <ul class="inner-column__list column-list">
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Рассуждения о предстоящем матче</a></li>
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Финишная прямая</a></li>
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Раскрыт комплект домашней формы</a></li>
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Какова она, вратарская жизнь?</a></li>
+                            <li class="column-list__item"><a href="../templates/news/8.html" class="column-list__link">Рассуждения о предстоящем матче</a></li>
+                            <li class="column-list__item"><a href="../templates/news/1.html" class="column-list__link">Финишная прямая</a></li>
+                            <li class="column-list__item"><a href="../templates/news/7.html" class="column-list__link">Раскрыт комплект домашней формы</a></li>
+                            <li class="column-list__item"><a href="../templates/news/6.html" class="column-list__link">Какова она, вратарская жизнь?</a></li>
                         </ul>
-                        <a href="#!" class="inner-column__button"><span>Все новости</span></a>
+                        <a href="/templates/news.html" class="inner-column__button"><span>Все новости</span></a>
                     </li>
                     <li class="inner-list__item inner-column">
                         <h2 class="inner-column__title">О нас</h2>
                         <ul class="inner-column__list column-list">
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Путь Геннадича</a></li>
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Фото</a></li>
+                            <li class="column-list__item"><a href="/templates/club.html" class="column-list__link column-list__link_way-js">Путь Геннадича</a></li>
+                            <li class="column-list__item"><a href="/templates/club.html" class="column-list__link column-list__link_photos-js">Фото</a></li>
                         </ul>
                     </li>
                     <li class="inner-list__item inner-column">
@@ -105,7 +184,7 @@
                             <li class="column-list__item column-list__item_player">Ян Киеня</li>
                             <li class="column-list__item column-list__item_player">Антон Фаттахов</li>
                         </ul>
-                        <a href="#!" class="inner-column__button"><span>Все игроки</span></a>
+                        <a href="/templates/team.html" class="inner-column__button"><span>Все игроки</span></a>
                     </li>
                     <li class="inner-list__item inner-column">
                         <h2 class="inner-column__title">Предстоящие</h2>
@@ -126,14 +205,14 @@
                     <li class="inner-list__item inner-column">
                         <h2 class="inner-column__title">Тренировки</h2>
                         <ul class="inner-column__list column-list">
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Жаркие и красивые парни</a></li>
+                            <li class="column-list__item"><a href="/templates/video.html" class="column-list__link column-list__link_guys-js">Жаркие и красивые парни</a></li>
                         </ul>
                         <h2 class="inner-column__title">Игры</h2>
                         <ul class="inner-column__list column-list">
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Латиносы 1-4 GENNADICH</a></li>
-                            <li class="column-list__item"><a href="#!" class="column-list__link">Спортмастер 6-1 GENNADICH</a></li>
+                            <li class="column-list__item"><a href="/templates/video.html" class="column-list__link column-list__link_latinos-js">Латиносы 1-4 GENNADICH</a></li>
+                            <li class="column-list__item"><a href="/templates/video.html" class="column-list__link column-list__link_sportmaster-js">Спортмастер 6-1 GENNADICH</a></li>
                         </ul>
-                        <a href="#!" class="inner-column__button"><span>Все видео</span></a>
+                        <a href="/templates/video.html" class="inner-column__button"><span>Все видео</span></a>
                     </li>
                 </ul>
             </div>
@@ -316,7 +395,7 @@
                                         <span class="player-card__number">10</span>
                                     </div> 
                                 </div>
-                                <div class="team-squad__player player-card">
+                                <div class="team-squad__player player-card player-card_last">
                                     <div class="player-card__pic">
                                         <img src="../img/player-16.jpg" alt="Максим Конев" class="player-card__img">
                                     </div>
@@ -332,7 +411,7 @@
                     
                 </div>
                 <aside class="main__right-side right-side right-side_padding-top">
-                    <div data-da=".news__wrapper,550,3" class="ekb-wrapper">
+                    <div class="ekb-wrapper">
                         <a href="#!" class="ekb-link">
                             <div class="swiper-container">
                                 <div class="swiper-wrapper">

@@ -1,89 +1,12 @@
-// Стартовое открытие страницы с учетом фильтра ссылок из шапки
-
-let article = document.querySelector('.way');
-let club = document.querySelector('.club');
-
-let data = localStorage.getItem("a");
-
-if (data === "way") {
-    article.style.display = 'block';
-    club.style.display = 'none';
-    localStorage.clear();
-} else if (data === "photos") {
-    article.style.display = 'none';
-    club.style.display = 'block';
-    localStorage.clear();
-} else {
-    article.style.display = 'block';
-    club.style.display = 'none';
-}
-
 // Индикация пункта меню
 
 (function () {
 
     let navArr = document.querySelectorAll('.nav__link');
 
-    navArr[1].classList.add('nav__link_active');
+    navArr[0].classList.add('nav__link_active');
 
 }());
-
-// Фильтр Путь-Фото
-
-(function () {
-
-    const way = document.querySelector('.button-way-js');
-    const photos = document.querySelector('.button-photos-js');
-
-    way.addEventListener('click', showWay);
-    photos.addEventListener('click', showClub);
-
-    if (article.style.display === 'block') {
-       way.classList.add('top-nav__button-active');
-    } else {
-        photos.classList.add('top-nav__button-active');
-    }
-    
-
-    function showWay () {
-
-        way.classList.add('top-nav__button-active');
-        photos.classList.remove('top-nav__button-active');
-
-        article.style.display = 'block';
-        club.style.display = 'none';
-    }
-
-    function showClub () {
-
-        way.classList.remove('top-nav__button-active');
-        photos.classList.add('top-nav__button-active');
-
-        article.style.display = 'none';
-        club.style.display = 'block';
-        
-    }
-
-}());
-
-// Подключение слайдера Екб
-
-(function () {
-
-    let ekbSlider = new Swiper('.swiper-ekb', {
-        loop: true,
-        spaceBetween: 30,
-        autoplay: {
-            delay: 3000,
-            disableOnInteraction: false
-        },
-        speed: 1000,
-    }); 
-
-}());
-
-
-
 
 // Подключение Слайдера галлереи
 
