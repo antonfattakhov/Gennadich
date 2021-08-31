@@ -54,9 +54,9 @@
         @include adaptive-value-fromMax-to550(margin-bottom, 10, 5);
         color: $textsubtitle;
         @extend %subtitleminiblock;
+        font-size: 10px;
         @media screen and (max-width: 550px) {
             margin-bottom: 7px;
-            font-size: 6px;
         }
     }
     &__title {

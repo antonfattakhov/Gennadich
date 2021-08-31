@@ -5,7 +5,7 @@
     background: url(../img/background-min.jpg) no-repeat right;
     background-color: $footercolor;
     @media screen and (max-width: 768px) {
-        margin-bottom: 12px;
+        margin-bottom: 25px;
     }
     &__wrapper {
         @include adaptive-value-fromMax-toMin(padding-top, 44, 25);

@@ -44,14 +44,14 @@
     &__subtitle {
         color: $textsubtitle;
         @extend %subtitleminiblock;
-        font-size: 10px;
+        font-size: 12px;
         line-height: 100%;
         margin-bottom: 15px;
     }
     &__title {
         @include adaptive-value-fromMax-to550(margin-bottom, 25, 15);
         @extend %titleblock;
-        @include adaptive-value-fromMax-toMin(font-size, 32, 17);
+        @include adaptive-value-fromMax-toMin(font-size, 32, 25);
         color: $textblack;
         line-height: 100%;
         @media screen and (max-width: 550px) {

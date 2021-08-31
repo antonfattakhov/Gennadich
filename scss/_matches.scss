@@ -43,6 +43,7 @@
         justify-content: space-between;
     }
     &__text {
+        @include adaptive-value-fromMax-toMin(font-size, 15, 10);
     }
     &__body {
         flex-wrap: nowrap;
@@ -240,7 +241,7 @@
             font-family: 'Circe';
             font-style: normal;
             font-weight: bold;
-            @include adaptive-value-fromMax-toMin(font-size, 16, 10);
+            @include adaptive-value-fromMax-toMin(font-size, 15, 10);
             line-height: 100%;
             color: #454D59;
         }

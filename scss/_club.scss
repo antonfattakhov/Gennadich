@@ -43,12 +43,13 @@
         @extend %subtitleminiblock;
         @media screen and (max-width: 550px) {
             margin-bottom: 15px;
-            font-size: 7px;
+            font-size: 12px;
             line-height: 100%;
         }
     }
     &__title {
         @extend %titleblock;
+        @include adaptive-value-fromMax-toMin(font-size, 32, 22);
         color: $textblack;
         @media screen and (max-width: 550px) {
             line-height: 100%;
@@ -58,6 +59,7 @@
 .article-way {
     &__title {
         @extend %titleblock;
+        @include adaptive-value-fromMax-toMin(font-size, 32, 22);
         @include adaptive-value-fromMax-toMin(margin-bottom, 32, 12);
     }
     &__text {
@@ -150,7 +152,7 @@
 .item-club {
     &__title {
         @extend %titlesections;
-        @include adaptive-value-fromMax-toMin(font-size, 28, 13);
+        @include adaptive-value-fromMax-toMin(font-size, 28, 15);
         color: $textwhite;
         position: absolute;
         @include adaptive-value-fromMax-toMin(left, 25, 10);

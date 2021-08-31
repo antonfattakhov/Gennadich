@@ -19,27 +19,45 @@
         width: 500px;
         opacity: 0;
         transition: .2s;
+        @media screen and (max-width: 768px) {
+            width: 300px;
+        }
+        @media screen and (max-height: 400px) {
+            height: 100%;
+            overflow: auto;
+            position: unset;
+            margin: 0 auto;
+            margin-top: 58px;
+            transform: translate(0%, 0%);
+        }
     }
     &__top {
         background-color: $redcolor;
         text-align: center;
-        padding-top: 20px;
-        padding-bottom: 20px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        @media screen and (max-width: 768px) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
     }
     &__title {
         font-family: 'Agency FB Cyrillic';
         font-style: normal;
         font-weight: normal;
-        font-size: 52px;
-        line-height: 60px;
+        font-size: 35px;
+        line-height: 100%;
         text-transform: uppercase;
         color: #FFFFFF;
+        @media screen and (max-width: 768px) {
+            font-size: 30px;
+        }
     }
     &__body {
         background-color:$textwhite;
         padding: 30px 100px;
-        @media screen and (max-width: 425px) {
-            padding: 30px 100px;
+        @media screen and (max-width: 768px) {
+            padding: 20px 30px;
         }
     }
     &_active {
@@ -48,15 +66,6 @@
         .login__wrapper {
             transform: translate(-50%, -50%);
             opacity: 1;
-            @media screen and (max-width: 768px) {
-                transform: translate(-50%, -50%) scale(.9);
-            }
-            @media screen and (max-width: 550px) {
-                transform: translate(-50%, -50%) scale(.8);
-            }
-            @media screen and (max-width: 425px) {
-                transform: translate(-50%, -50%) scale(.6);
-            }
         }
     }
     &__sending {
@@ -113,23 +122,19 @@
 }
 .login-body {
     &__text {
-        font-family: Circe;
+        font-family: 'Circe';
         font-style: normal;
         font-weight: bold;
-        font-size: 16px;
+        font-size: 15px;
         line-height: 100%;
         text-align: center;
         color: #454D59;
         margin-bottom: 25px;
         &_2 {
-            margin-bottom: 15px;
-        }
-        @media screen and (max-width: 425px) {
-            font-size: 20px;
+            margin-bottom: 10px;
         }
     }
     &__form {
-        margin-bottom: 25px;
     }
     &__media {
         text-align: center;
@@ -175,30 +180,39 @@
         font-family: 'Circe';
         font-style: normal;
         font-weight: bold;
-        font-size: 11px;
-        line-height: 16px;
+        font-size: 14px;
+        line-height: 100%;
         text-transform: uppercase;
         color: #72767E;
-        @media screen and (max-width: 425px) {
-            font-size: 14px;
+        @media screen and (max-width: 768px) {
+            font-size: 12px;
+            padding-top: 12px;
+            padding-left: 15px;
+            padding-bottom: 12px;
+            margin-bottom: 15px;
         }
     }
     &__button {
         width: 100%;
         padding-top: 10px;
         padding-bottom: 10px;
+        margin-bottom: 25px;
         font-family: 'Circe';
         font-style: normal;
         font-weight: bold;
-        font-size: 11px;
+        font-size: 14px;
         line-height: 16px;
         text-transform: uppercase;
         color: $textwhite;
         background-color: $redcolor;
         transition: .2s;
-        @media screen and (max-width: 425px) {
-            font-size: 14px;
+        @media screen and (max-width: 768px) {
+            padding-top: 12px;
+            padding-bottom: 12px;
         }
+        // @media screen and (max-width: 425px) {
+        //     font-size: 14px;
+        // }
         &:active {
             background-color: $footercolor;
         }
@@ -239,9 +253,12 @@
         background-color: $footercolor;
         top: 80%;
         left: 50%;
-        transform: translate(-50%, +150%);
+        transform: translate(-50%, -50%);
         width: 600px;        
         transition: .2s;
+        @media screen and (max-width: 768px) {
+            width: 300px;
+        }
     }
     &_close {
         .search-popup__wrapper {
@@ -249,16 +266,21 @@
         }
     }
     &__title {
-        font-size: 35px;
     }
     &__top {
+        padding-left: 10px;
+        padding-right: 10px;
         background-color: $footercolor;
     }
     &__body {
         padding: 30px 0;
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-around;
         background-color: $textblack;
+        @media screen and (max-width: 768px) {
+            padding: 12px 0;
+        }
     }
     &__button {
         width: 230px;
@@ -274,9 +296,11 @@
         font-size: 11px;
         line-height: 16px;
         text-transform: uppercase;
-
-        @media screen and (max-width: 425px) {
-            font-size: 14px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        @media screen and (max-width: 768px) {
+            margin-bottom: 12px;
         }
         &:active {
             background-color: $redcolor;
@@ -289,18 +313,6 @@
         opacity: 1;
         .search-popup__wrapper {
             transform: translate(-50%, -50%);
-            @media screen and (max-width: 768px) {
-                transform: translate(-50%, -50%) scale(.9);
-            }
-            @media screen and (max-width: 550px) {
-                transform: translate(-50%, -50%) scale(.8);
-            }
-            @media screen and (max-width: 508px) {
-                transform: translate(-50%, -50%) scale(.6);
-            }
-            @media screen and (max-width: 390px) {
-                transform: translate(-50%, -50%) scale(.45);
-            }
         }
     }
 }

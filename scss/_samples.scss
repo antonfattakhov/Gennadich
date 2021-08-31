@@ -21,7 +21,7 @@ $textsubtitle: #72767E;
     font-family: 'Agency FB Cyrillic';
     font-style: normal;
     font-weight: normal;
-    @include adaptive-value-fromMax-toMin(font-size, 28, 22);
+    font-size: 30px;
     line-height: 100%;
     text-transform: uppercase;
 }
@@ -29,7 +29,7 @@ $textsubtitle: #72767E;
     font-family: 'Circe';
     font-style: normal;
     font-weight: bold;
-    @include adaptive-value-fromMax-toMin(font-size, 30, 17);
+    @include adaptive-value-fromMax-toMin(font-size, 30, 22);
     font-size: 30px;
     line-height: 100%;
 }
@@ -51,14 +51,14 @@ $textsubtitle: #72767E;
     font-family: 'Circe';
     font-style: normal;
     font-weight: bold;
-    @include adaptive-value-fromMax-to550(font-size, 11, 6);
-    @include adaptive-value-fromMax-to550(line-height, 16, 10);
+    font-size: 12px;
+    line-height: 100%;
     text-transform: uppercase;
 }
 %paragraph {
     font-family: 'Circe';
     font-style: normal;
     font-weight: normal;
-    @include adaptive-value-fromMax-toMin(font-size, 18, 13);
-    @include adaptive-value-fromMax-toMin(line-height, 27, 15);
+    @include adaptive-value-fromMax-toMin(font-size, 18, 15);
+    @include adaptive-value-fromMax-toMin(line-height, 27, 17);
 }

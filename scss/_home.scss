@@ -2,10 +2,10 @@
 
 .main {
     margin-top: 118px;
-//     @include adaptive-value-fromMax-toMin(margin-bottom, 100, 25);
+    // @include adaptive-value-fromMax-toMin(margin-bottom, 100, 25);
     @media screen and (max-width: 768px) {
         margin-top: 0;
-        margin-bottom: 12px;
+        margin-bottom: 25px;
     }
     &__container {
         
@@ -105,7 +105,7 @@
         }
     }
     &__button {
-        max-width: 230px;
+        max-width: 280px;
         margin-left: 17px;
         margin-right: 17px;
         background: none;
@@ -331,7 +331,8 @@
 .main-button {
     &__container {
         display: block;
-        @include adaptive-value-fromMax-to550(padding, 10, 5);
+        // @include adaptive-value-fromMax-to550(padding, 15, 5);
+        padding: 15px 10px;
         background-color: $redcolor;
         text-align: center;
         transition: .5s;
@@ -342,8 +343,8 @@
         font-family: 'Circe';
         font-style: normal;
         font-weight: normal;
-        @include adaptive-value-fromMax-to550(font-size, 12, 9);
-        line-height: 18px;
+        @include adaptive-value-fromMax-toMin(font-size, 15, 10);
+        line-height: 100%;
         text-transform: uppercase;
         @media screen and (max-width: 550px) {
             padding: 10px;

@@ -78,12 +78,10 @@
     &__title {
         @include adaptive-value-fromMax-to550(margin-bottom, 18, 5);
         @extend %titleblock;
-        @include adaptive-value-fromMax-to550(font-size, 25, 12);
         color: $textblack;
         transition: .5s;
         @media screen and (max-width: 550px) {
             margin-bottom: 15px;
-            font-size: 17px;
             line-height: 100%;
         }
     }
