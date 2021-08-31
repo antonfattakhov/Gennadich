@@ -1045,11 +1045,7 @@ img {
   .login__wrapper {
     height: 100%;
     overflow: auto;
-    position: unset;
-    margin: 0 auto;
     margin-top: 58px;
-    -webkit-transform: translate(0%, 0%);
-            transform: translate(0%, 0%);
   }
 }
 
