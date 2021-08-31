@@ -38,6 +38,7 @@
 .player-card {
     &__title-block {
         background-color: $textwhite;
+        flex-grow: 1;
         @include adaptive-value-fromMax-to550(padding-left, 25, 12);
         @include adaptive-value-fromMax-to550(padding-right, 25, 12);
         @include adaptive-value-fromMax-to550(padding-top, 30, 12);
@@ -62,8 +63,9 @@
     &__title {
         @extend %titleblock;
         color: $textblack;
-        @media screen and (max-width: 550px) {
-            line-height: 100%;
+        @include adaptive-value-fromMax-to768(font-size, 30, 20);
+        @media screen and (max-width: 768px) {
+            font-size: 16px;
         }
     }
     &__number {
@@ -95,8 +97,5 @@
     }
 }
 .right-side_padding-top {
-    @include adaptive-value-fromMax-to550(padding-top, 53, 48.2);
-    @media screen and (max-width: 768px) {
-        padding-top: 0;
-    }
+    padding-top: 55px;
 }

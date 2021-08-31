@@ -345,6 +345,9 @@
     @media screen and (max-width: 768px) {
         display: none;
     }
+    @media (max-height: 376px) and (max-width: 813px) {
+        display: none;
+    }
 }
 
 .header__inner-list-active {
@@ -383,7 +386,8 @@
     &__list {
         margin-bottom: 25px;
         @extend %subtitleblockbold;
-        @include adaptive-value-fromMax-to768(font-size, 14, 12);
+        font-size: 14px;
+        line-height: 21px;
     }
     &__button {
         display: inline-block;
