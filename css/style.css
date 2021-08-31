@@ -1417,13 +1417,6 @@ img {
 
 .main {
   margin-top: 118px;
-  margin-bottom: 100px;
-}
-
-@media screen and (max-width: 1360px) {
-  .main {
-    margin-bottom: calc(25px + 75 * ((100vw - 320px) / (1360 - 320)));
-  }
 }
 
 @media screen and (max-width: 768px) {
