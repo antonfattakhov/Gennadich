@@ -22,7 +22,7 @@
         @media screen and (max-width: 768px) {
             width: 300px;
         }
-        @media screen and (max-height: 400px) {
+        @media (min-width: 550px) and (max-height: 400px) {
             height: 100%;
             overflow: auto;
             position: unset;
@@ -251,7 +251,7 @@
     &__wrapper {
         position: absolute;
         background-color: $footercolor;
-        top: 80%;
+        top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         width: 600px;        
@@ -261,9 +261,6 @@
         }
     }
     &_close {
-        .search-popup__wrapper {
-            top: 50%;
-        }
     }
     &__title {
     }
