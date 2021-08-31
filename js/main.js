@@ -461,15 +461,23 @@ function pressEsc (event) {
         }
     
         function ContinueSearch () {
+            let textColor = '';
             // Проверка на первый и последующие вызовы
             if (a === 0) {
                 searchChoosePopup.classList.add('search-popup_active');
                 scrollTo(foundElements[a]);
+                textColor = foundElements[a].style.color;
+                foundElements[a].style.color = '#F00000';
                 a += 1;
             } else if (a > 0 && a < foundElements.length) {
+                foundElements[a - 1].style.color = textColor;
                 scrollTo(foundElements[a]);
+                textColor = foundElements[a].style.color;
+                foundElements[a].style.color = '#F00000';
                 a += 1;
             } else {
+                foundElements[a - 1].style.color = textColor;
+                textColor = '';
                 a = 0;
                 CloseSearch();
             }
