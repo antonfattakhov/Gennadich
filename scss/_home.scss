@@ -5,6 +5,7 @@
 //     @include adaptive-value-fromMax-toMin(margin-bottom, 100, 25);
     @media screen and (max-width: 768px) {
         margin-top: 0;
+        margin-bottom: 12px;
     }
     &__container {
         
