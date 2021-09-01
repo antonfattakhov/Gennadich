@@ -1,4 +1,4 @@
-// Youtube API
+// Подключение Youtube API
 
 var tag = document.createElement('script');
 
@@ -11,18 +11,17 @@ var players = [];
 
 function onYouTubeIframeAPIReady() {
     players[0] = new YT.Player('player1', {
-        playerVars: { 'autoplay': 0, 'controls': 0 },
+        playerVars: { 'autoplay': 0, 'controls': 1 },
     });
     players[1] = new YT.Player('player2', {
-        playerVars: { 'autoplay': 0, 'controls': 0 },
+        playerVars: { 'autoplay': 0, 'controls': 1 },
     });
     players[2] = new YT.Player('player3', {
-        playerVars: { 'autoplay': 0, 'controls': 0 },
+        playerVars: { 'autoplay': 0, 'controls': 1 },
     });
 }
 
 setTimeout(() => {
-    console.log('ready');
     players[0].cueVideoById({
         'videoId': 'ev9HbCnTd-4',
         'startSeconds': 252, 
