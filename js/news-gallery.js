@@ -58,37 +58,3 @@
         });
     }
 }());
-
-
-// Hide/Show scroll
-
-
-function hideScroll () {
-    
-    const getScrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    header.style.paddingRight = `${getScrollbarWidth}px`;
-    document.body.style.paddingRight = `${getScrollbarWidth}px`;
-    document.body.style.overflowY = 'hidden';
-    document.body.addEventListener('touchmove', hideforIOS, { passive: false });
-    window.addEventListener('keydown', pressEsc);
-} 
-
-function hideforIOS (event) {
-    event.preventDefault();
-}
-
-function showScroll (event) {
-
-    header.style.paddingRight = '';
-    document.body.style.paddingRight = '';
-    document.body.style.overflowY = 'visible';
-    document.body.removeEventListener('touchmove', hideforIOS);
-    window.removeEventListener('keydown', pressEsc);
-}
-
-function pressEsc (event) {
-    if (event.keyCode == 27) {
-        swiper.style.display = 'none';
-        showScroll();
-    }
-};
