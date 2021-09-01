@@ -81,7 +81,6 @@
                 // Фильтруем массив 2ой раз для сравнения высот только появляющихся карточек
                 filterArr2 = filterArr.filter(function(element, index, arr) {
                     if (indexOfFilterArr <= index && index < counter) {
-                        console.log(element.firstElementChild.offsetHeight);
                     return element; 
                     }  
                 })
@@ -100,7 +99,6 @@
                     filterArr[i].style.marginBottom = 25 + 'px';
                     filterArr[i].style.pointerEvents = 'unset';
                     filterArr[i].firstElementChild.style.height = 100 + '%';
-                    console.log(filterArr[i]);
 
                     // Изменяем значение атрибута data, который влияет на поиск по странице
                     filterArr[i].querySelectorAll('h2, h3, h4, p, figcaption').forEach(function(element) {element.dataset.hide = 'no'});
@@ -120,7 +118,6 @@
                         event.target.firstElementChild.innerHTML = 'Скрыть';
                     }  
                 }
-                console.log(counter);
             } else {
                 
                 // Работаем с карточками по 3 штуки
@@ -129,7 +126,6 @@
                 // Фильтруем массив 2ой раз для сравнения высот только появляющихся карточек
                 filterArr2 = filterArr.filter(function(element, index, arr) {
                     if (indexOfFilterArr <= index && index < counter) {
-                        console.log(element.firstElementChild.offsetHeight);
                     return element; 
                     }  
                 })
@@ -146,7 +142,6 @@
                     filterArr[i].style.marginBottom = 25 + 'px';
                     filterArr[i].style.pointerEvents = 'unset';
                     filterArr[i].firstElementChild.style.height = 100 + '%';
-                    console.log(filterArr[i]);
 
                     // Изменяем значение атрибута data, который влияет на поиск по странице
                     filterArr[i].querySelectorAll('h2, h3, h4, p, figcaption').forEach(function(element) {element.dataset.hide = 'no'});
