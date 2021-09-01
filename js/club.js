@@ -137,7 +137,7 @@ if (data === "way") {
 
 
 
-// Hide/Show scroll
+// Показать/скрыть скролл
 
 function hideScroll () {
     
