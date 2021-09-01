@@ -74,6 +74,8 @@
 
             // Определяем какая ширина страницы
             if (breakpoint.matches) {
+                
+                // Работаем с карточками по 2 штуки
                 counter += 2;
 
                 // Фильтруем массив 2ой раз для сравнения высот только появляющихся карточек
@@ -120,6 +122,8 @@
                 }
                 console.log(counter);
             } else {
+                
+                // Работаем с карточками по 3 штуки
                 counter += 3;
 
                 // Фильтруем массив 2ой раз для сравнения высот только появляющихся карточек
@@ -160,11 +164,11 @@
                         event.target.innerHTML = 'Скрыть';
                     } else {
                         event.target.firstElementChild.innerHTML = 'Скрыть';
-                    }
-                    
+                    } 
                 }
             }
         }
+        
         // Закрытие всех открытых карточек
         else {
             filterArr.forEach(function (element, index, array) {
@@ -204,18 +208,20 @@
 
 // Отправка некоторых данных при переходе по ссылкам
 
-const videoPostLatinos = document.querySelector('.main-post__link_latinos-js');
-const videoPostSportmaster = document.querySelectorAll('.main-mini-post__link_sportmaster-js');
-const videoPostGuys = document.querySelectorAll('.main-mini-post__link_guys-js');
+(function () {
+    const videoPostLatinos = document.querySelector('.main-post__link_latinos-js');
+    const videoPostSportmaster = document.querySelectorAll('.main-mini-post__link_sportmaster-js');
+    const videoPostGuys = document.querySelectorAll('.main-mini-post__link_guys-js');
 
-videoPostLatinos.onclick = function () {
-    localStorage.setItem("a", "latinos");
-};
+    videoPostLatinos.onclick = function () {
+        localStorage.setItem("a", "latinos");
+    };
 
-videoPostSportmaster.forEach(function(element, index, arr) {
-    element.onclick = function () {localStorage.setItem("a", "sportmaster");}
-});
+    videoPostSportmaster.forEach(function(element, index, arr) {
+        element.onclick = function () {localStorage.setItem("a", "sportmaster");}
+    });
 
-videoPostGuys.forEach(function(element, index, arr) {
-    element.onclick = function () {localStorage.setItem("a", "guys");}
-});
+    videoPostGuys.forEach(function(element, index, arr) {
+        element.onclick = function () {localStorage.setItem("a", "guys");}
+    });
+}());
