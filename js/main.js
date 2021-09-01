@@ -147,7 +147,7 @@ class DynamicAdapt {
 da.init();
 
 
-// Burger
+// Бургер
 
 let header = document.querySelector('.header');
 
@@ -171,7 +171,7 @@ let header = document.querySelector('.header');
     burger.addEventListener('click', burgerClick);
 }());
 
-// Inner-list animation
+// Анимация Inner-list - выпадающей шторки
 
 (function () {
     let posX, posY;
@@ -214,7 +214,6 @@ let header = document.querySelector('.header');
         console.log('ремув оооол');
     } 
     
-
     menuLinks.forEach((element, index, array) => {
       element.addEventListener('mouseover', function () {
         innerListOpen(element);
@@ -223,7 +222,7 @@ let header = document.querySelector('.header');
 }());
 
 
-// Scroll into inner-list
+// Создание скролла в Inner-list при малой высоте экрана
 
 (function innerListHeight() {
     const innerList = document.querySelector('.header__inner-list');
@@ -244,31 +243,34 @@ let header = document.querySelector('.header');
 
 // Отправка некоторых данных при переходе по ссылкам
 
-const videoLinkLatinos = document.querySelector('.column-list__link_latinos-js');
-const videoLinkSportmaster = document.querySelector('.column-list__link_sportmaster-js');
-const videoLinkGuys = document.querySelector('.column-list__link_guys-js');
-const videoLinkWay = document.querySelector('.column-list__link_way-js');
-const videoLinkPhotos = document.querySelector('.column-list__link_photos-js');
+(function () {
+    const videoLinkLatinos = document.querySelector('.column-list__link_latinos-js');
+    const videoLinkSportmaster = document.querySelector('.column-list__link_sportmaster-js');
+    const videoLinkGuys = document.querySelector('.column-list__link_guys-js');
+    const videoLinkWay = document.querySelector('.column-list__link_way-js');
+    const videoLinkPhotos = document.querySelector('.column-list__link_photos-js');
 
-videoLinkLatinos.onclick = function () {
-    localStorage.setItem("a", "latinos");
-};
+    videoLinkLatinos.onclick = function () {
+        localStorage.setItem("a", "latinos");
+    };
 
-videoLinkSportmaster.onclick = function () {
-    localStorage.setItem("a", "sportmaster");
-};
+    videoLinkSportmaster.onclick = function () {
+        localStorage.setItem("a", "sportmaster");
+    };
 
-videoLinkGuys.onclick = function () {
-    localStorage.setItem("a", "guys");
-};
+    videoLinkGuys.onclick = function () {
+        localStorage.setItem("a", "guys");
+    };
 
-videoLinkWay.onclick = function () {
-    localStorage.setItem("a", "way");
-};
+    videoLinkWay.onclick = function () {
+        localStorage.setItem("a", "way");
+    };
 
-videoLinkPhotos.onclick = function () {
-    localStorage.setItem("a", "photos");
-};
+    videoLinkPhotos.onclick = function () {
+        localStorage.setItem("a", "photos");
+    };
+}());
+
 
 // Открытие окна Логин
 
@@ -293,11 +295,12 @@ login.addEventListener('click', () => {
     
 });
 
-// Hide/Show scroll
+// Скрытие/Показ скролла
 
 function hideScroll () {
     
     const getScrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    
     header.style.paddingRight = `${getScrollbarWidth}px`;
     document.body.style.paddingRight = `${getScrollbarWidth}px`;
     document.body.style.overflowY = 'hidden';
@@ -326,7 +329,7 @@ function pressEsc (event) {
 };
 
 
-// Form validation
+// Валидация формы
 
 (function () {
 
@@ -416,7 +419,7 @@ function pressEsc (event) {
             if (event.keyCode == 13) {
                 searchText();
             }
-    };
+        };
     });
     
     function searchText () {
@@ -451,7 +454,8 @@ function pressEsc (event) {
             searchCloseBtn = searchClosePopup.querySelector('.search-popup__button_close');
             searchCloseBtn.addEventListener('click', CloseSearch);
         } else {
-            // Новый цикл с брейком и континью
+            
+            // Новый перебор по найденным совпадениям
             searchCloseBtn = searchChoosePopup.querySelector('.search-popup__button_close');
             searchChooseBtn = searchChoosePopup.querySelector('.search-popup__button_goahead');
             searchCloseBtn.addEventListener('click', CloseSearch);
