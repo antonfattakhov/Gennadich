@@ -183,11 +183,9 @@ let header = document.querySelector('.header');
         
         if (innerList.classList.contains('header__inner-list-active') != true) {
             innerList.classList.add('header__inner-list-active');
-            console.log('вывод на экран иннер-лист');
             innerList.addEventListener('mouseleave', innerListClose);
 
             hoverObject = element.getBoundingClientRect();
-            console.dir(hoverObject);
             
             document.addEventListener('mousemove', mouseMove);
       } 
@@ -197,21 +195,16 @@ let header = document.querySelector('.header');
         posX = event.clientX;
         posY = event.clientY;
         
-        console.log('курсор'+posX, "право"+hoverObject.right, "лево"+hoverObject.left); 
-        console.log("курсор"+posY, "верх"+hoverObject.top, "низ"+hoverObject.bottom);
         if (hoverObject.top - 2 > posY || hoverObject.left - 2 > posX || hoverObject.right < posX) {
             innerListClose();
-            console.log('вышел за рамки');
         } else if (hoverObject.bottom < posY) {
             document.removeEventListener('mousemove', mouseMove);
-            console.log('ремув маусмув');
         }
     }
     function innerListClose () {
         innerList.classList.remove('header__inner-list-active');
         innerList.removeEventListener('mouseleave', innerListClose);
         document.removeEventListener('mousemove', mouseMove);
-        console.log('ремув оооол');
     } 
     
     menuLinks.forEach((element, index, array) => {
@@ -347,7 +340,6 @@ function pressEsc (event) {
 
         const userName = field1.value;
         const userPhone = field2.value;
-        console.log(userName, userPhone);
         
         sendData(checkName(regName, userName), checkPhone(regName, userPhone));
 
@@ -374,11 +366,9 @@ function pressEsc (event) {
             return new Promise(resolve => setTimeout(resolve, 3000));
         }
         async function sendData (a, b) {
-            console.log(a, b);
             if (a && b) {
                 // Отправка формы
                 document.querySelector('.login__sending').style.display = 'block';
-                console.log('Данные отправляются');
                 await wait();
                 document.querySelector('.login__sending').style.display = 'none';
                 formLogin.classList.remove('login_active');
@@ -389,7 +379,7 @@ function pressEsc (event) {
                 field1.style.backgroundColor = 'white';
                 field2.style.backgroundColor = 'white';
             } else {
-                console.log('Что-то не верно');
+                // Возникла ошибка
             }
         }
     }
