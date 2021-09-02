@@ -8,6 +8,7 @@ GENNADICH - мой второй pet-проект, разработанный с 
 :white_check_mark: SCSS  
 :white_check_mark: JS  
 :white_check_mark: BEM  
+:white_check_mark: Common GIT commands  
 :white_check_mark: Own Design
 
 #### :art: Дизайн.
