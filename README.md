@@ -10,8 +10,9 @@ GENNADICH - мой второй pet-проект, разработанный с 
 :white_check_mark: BEM  
 :white_check_mark: Own Design
 
-Дизайн сайта подготовлен в **FIGMA** с использованием **PHOTOSHOP**(см. ниже первую страницу). Самостоятельно продумана визуальная составляющая интерфейса, подготовлены тексты, картинки.  
-Сам макет можно найти [по ссылке](https://www.figma.com/file/ClBFkp1TfxZo9bvsPCk1wX/GENNADICH-for-GitHub?node-id=0%3A1).
+#### :art: Дизайн.
+Макет сайта подготовлен в **FIGMA** с использованием **PHOTOSHOP**(см. ниже первую страницу). Самостоятельно продумана визуальная составляющая интерфейса, подготовлены тексты, картинки.  
+Файл можно найти [по ссылке](https://www.figma.com/file/ClBFkp1TfxZo9bvsPCk1wX/GENNADICH-for-GitHub?node-id=0%3A1).
 
 #### :hammer: Функционал сайта:
 - SVG-анимация
