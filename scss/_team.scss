@@ -92,10 +92,10 @@
         min-height: 100%;
         object-fit: cover;
     }
-    &_last {
-        margin-bottom: 0;
-    }
 }
 .right-side_padding-top {
     padding-top: 55px;
+    @media screen and (max-width: 768px) {
+        padding-top: 0;
+    }
 }
