@@ -174,12 +174,8 @@
 
 .ekb-wrapper {
     margin: 0 auto;
-    @include adaptive-value-fromMax-to550(margin-bottom, 25, 12);
+    margin-bottom: 25px;
     max-width: 302px;
-    @media screen and (max-width: 550px) {
-        margin-top: 12px;
-        margin-bottom: 12px;
-    }
 }
 .swiper-item_ekb {
     position: relative;
