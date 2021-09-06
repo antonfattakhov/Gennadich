@@ -2822,19 +2822,6 @@ img {
   max-width: 302px;
 }
 
-@media screen and (max-width: 1360px) {
-  .ekb-wrapper {
-    margin-bottom: calc(12px + 13 * ((100vw - 550px) / (1360 - 550)));
-  }
-}
-
-@media screen and (max-width: 550px) {
-  .ekb-wrapper {
-    margin-top: 12px;
-    margin-bottom: 12px;
-  }
-}
-
 .swiper-item_ekb {
   position: relative;
 }
@@ -3641,12 +3628,14 @@ iframe {
      object-fit: cover;
 }
 
-.player-card_last {
-  margin-bottom: 0;
-}
-
 .right-side_padding-top {
   padding-top: 55px;
+}
+
+@media screen and (max-width: 768px) {
+  .right-side_padding-top {
+    padding-top: 0;
+  }
 }
 
 .match__title {
